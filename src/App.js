@@ -1,11 +1,11 @@
 import React from "react";
-import Searchbox from "./components/Searchbox";
+import Main from "./components/Main";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Searchbox />
+      <Main />
     </div>
   );
 }

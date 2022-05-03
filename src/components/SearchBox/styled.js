@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const MainBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export const SearchBox = styled.div`
   display: flex;
   flex-direction: column;

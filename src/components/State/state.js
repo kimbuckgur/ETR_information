@@ -9,3 +9,8 @@ export const APIKey = atom({
   key: "APIKey",
   default: "ymj3AvldYuaQaSnf3oT3S5MrxNAU1NvH4SDndXvS",
 });
+
+export const OnAndOff = atom({
+  key: "OnAndOff",
+  default: true,
+});
