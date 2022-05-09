@@ -2,9 +2,29 @@ import styled from "styled-components";
 
 export const InfomationBox = styled.div`
   width: 1000px;
-  height: 1700px;
+  height: 1100px;
   background-color: #ffffff;
-  margin-top: 60px;
+  margin-top: 70px;
+  margin-bottom: 70px;
   border-radius: 8px;
-  border: 2px solid #EFECEC;
+  border: 2px solid #efecec;
+`;
+
+export const NoneTextBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+`;
+
+export const NoneText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 32px;
+  color: #b6b6b6;
 `;

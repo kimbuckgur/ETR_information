@@ -8,7 +8,7 @@ export const MainBox = styled.div`
   flex-direction: column;
   align-items: center;
 
-  height:3000px;
+  height: auto;
   background-color: #f6f6f6;
 `;
 
@@ -16,7 +16,7 @@ const Main = () => {
   return (
     <MainBox>
       <Searchbox />
-      <InfomationBox/>
+      <InfomationBox />
     </MainBox>
   );
 };

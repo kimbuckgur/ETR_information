@@ -12,5 +12,10 @@ export const APIKey = atom({
 
 export const OnAndOff = atom({
   key: "OnAndOff",
-  default: true,
+  default: false,
+});
+
+export const UserID = atom({
+  key: "userId",
+  default: undefined,
 });

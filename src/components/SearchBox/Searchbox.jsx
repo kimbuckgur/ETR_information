@@ -1,19 +1,38 @@
 import axios from "axios";
 import React, { useState, useRef } from "react";
 import { useRecoilState } from "recoil";
-import { baseURL, APIKey, OnAndOff } from "../State/state";
+import { baseURL, APIKey, OnAndOff, UserID } from "../State/state";
 import SearchIcon from "../../assets/svg/SearchIcon.svg";
 import * as S from "./styled";
 
 const Searchbox = () => {
-  const [NickNameText, setNickNameText] = useState("ApK0oeBo");
+  const [NickNameText, setNickNameText] = useState("");
   const [ETRURL, setETRURL] = useRecoilState(baseURL);
   const [ETR_ApiKey, setETR_ApiKey] = useRecoilState(APIKey);
+  const [userId, setUserId] = useRecoilState(UserID);
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
   const onChangeNickNameText = (e) => {
     setNickNameText(e.target.value);
   };
+
+  // const GeBatttleRecord = () => {
+  //   let UserId = localStorage.getItem("UserId");
+  //   axios({
+  //     method: "GET",
+  //     url: `${ETRURL}/v1/user/games/${UserId}`,
+  //     params: {
+  //       query: {
+  //         next:0
+  //       }
+  //     },
+  //     headers: {
+  //       "x-api-key": `${ETR_ApiKey}`,
+  //     },
+  //   }).then((res) => {
+  //     console.log(res);
+  //   });
+  // };
 
   // const GetRank = () => {
   //   let UserId = localStorage.getItem("UserId");
@@ -45,7 +64,7 @@ const Searchbox = () => {
     if (e.key == "Enter") {
       axios({
         method: "GET",
-        url: `${ETRURL}/v1/user/NickNameText`,
+        url: `${ETRURL}/v1/user/nickname`,
         params: {
           query: `${NickNameText}`,
         },
@@ -54,19 +73,20 @@ const Searchbox = () => {
         },
       })
         .catch((res) => {
-          console.log(res);
+          setETR_OnAndOff(false);
+          console.log("실패");
           setNickNameText("");
           alert("닉네임을 정확하게 입력해주세요");
         })
         .then((res) => {
           if (res.data.code == 200) {
             console.log(res);
+            setETR_OnAndOff(true);
+            setUserId(res.data.user.userNum);
             localStorage.setItem("UserId", `${res.data.user.userNum}`);
-            console.log(localStorage.getItem("UserId"));
           } else if (res.data.code == 404) {
             setETR_OnAndOff(false);
             console.log("실패");
-            console.log(ETR_OnAndOff);
             setNickNameText("");
             alert("닉네임을 정확하게 입력해주세요");
           }
