@@ -32,20 +32,6 @@ const Searchbox = () => {
   //   }).then((res) => {
   //     console.log(res);
   //   });
-  // };
-
-  // const GetRank = () => {
-  //   let UserId = localStorage.getItem("UserId");
-  //   axios({
-  //     method: "GET",
-  //     url: `${ETRURL}/v1/rank/${UserId}/${3}/${1}`,
-  //     headers: {
-  //       "x-api-key": `${ETR_ApiKey}`,
-  //     },
-  //   }).then((res) => {
-  //     console.log(res);
-  //   });
-  // };
 
   // const GetStats = () => {
   //   let UserId = localStorage.getItem("UserId");
@@ -96,7 +82,13 @@ const Searchbox = () => {
 
   return (
     <S.SearchBox>
-      <S.TitleText>E.T.R 전적 검색 서비스</S.TitleText>
+      <S.TitleText
+        onClick={() => {
+          setETR_OnAndOff(false);
+        }}
+      >
+        E.T.R 전적 검색 서비스
+      </S.TitleText>
       <S.inputDiv>
         <S.SearchInput
           onChange={onChangeNickNameText}

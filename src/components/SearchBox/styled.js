@@ -12,6 +12,8 @@ export const SearchBox = styled.div`
 `;
 
 export const TitleText = styled.p`
+  cursor: pointer;
+
   font-family: "NanumSquare";
   font-style: normal;
   font-weight: 800;

@@ -3,11 +3,9 @@ import styled from "styled-components";
 export const InfomationBox = styled.div`
   width: 1000px;
   height: 1100px;
-  background-color: #ffffff;
   margin-top: 70px;
   margin-bottom: 70px;
   border-radius: 8px;
-  border: 2px solid #efecec;
 `;
 
 export const NoneTextBox = styled.div`
@@ -15,6 +13,8 @@ export const NoneTextBox = styled.div`
   justify-content: center;
   align-items: center;
 
+  background-color: #ffffff;
+  border: 2px solid #efecec;
   margin: 0px;
   width: 100%;
   height: 100%;
@@ -28,3 +28,4 @@ export const NoneText = styled.p`
   line-height: 32px;
   color: #b6b6b6;
 `;
+
