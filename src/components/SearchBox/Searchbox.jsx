@@ -16,22 +16,6 @@ const Searchbox = () => {
     setNickNameText(e.target.value);
   };
 
-  // const GeBatttleRecord = () => {
-  //   let UserId = localStorage.getItem("UserId");
-  //   axios({
-  //     method: "GET",
-  //     url: `${ETRURL}/v1/user/games/${UserId}`,
-  //     params: {
-  //       query: {
-  //         next:0
-  //       }
-  //     },
-  //     headers: {
-  //       "x-api-key": `${ETR_ApiKey}`,
-  //     },
-  //   }).then((res) => {
-  //     console.log(res);
-  //   });
 
   // const GetStats = () => {
   //   let UserId = localStorage.getItem("UserId");

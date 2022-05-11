@@ -33,6 +33,59 @@ export const InfomationViewBox = styled.div`
 `;
 
 export const InfomationViewBoxFlex = styled.div`
-  display: flex;  
+  display: flex;
 `;
 
+export const SeasonBox = styled.div`
+  display: flex;
+  align-items: center;
+
+  margin-top: 20px;
+  margin-left: 25px;
+`;
+
+export const SeasonTitle = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #343434;
+`;
+
+export const SeasonNumberBoxOff = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  color: #343434;
+
+  background: #f0f0f0;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+`;
+
+export const SeasonNumberBoxOn = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #ffffff;
+
+  background: #343434;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+`;
