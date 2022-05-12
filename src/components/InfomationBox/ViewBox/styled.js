@@ -54,6 +54,7 @@ export const SeasonTitle = styled.p`
 `;
 
 export const SeasonNumberBoxOff = styled.div`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,6 +74,7 @@ export const SeasonNumberBoxOff = styled.div`
 `;
 
 export const SeasonNumberBoxOn = styled.div`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +83,7 @@ export const SeasonNumberBoxOn = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  color: #ffffff;
+  color: white;
 
   background: #343434;
   border-radius: 5px;

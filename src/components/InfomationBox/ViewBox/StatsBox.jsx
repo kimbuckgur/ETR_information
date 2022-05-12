@@ -29,12 +29,26 @@ const StatsBox = () => {
     },
   ]);
 
+  const SeasonNumberClick = (e) => {
+    const { id } = e.target;
+    setSeasonNumber(
+      seasonNumber.map((x, index) => {
+        return id == x.season ? { ...seasonNumber, active: !x.active } : x;
+      })
+    );
+  };
+
   const SeasonNumberMap = seasonNumber.map((x, index) => {
+    let num = x.season;
     let bool = x.active;
     return bool ? (
-      <S.SeasonNumberBoxOn>{x.season}</S.SeasonNumberBoxOn>
+      <S.SeasonNumberBoxOn onClick={SeasonNumberClick} key={index} id={num}>
+        {num}
+      </S.SeasonNumberBoxOn>
     ) : (
-      <S.SeasonNumberBoxOff>{x.season}</S.SeasonNumberBoxOff>
+      <S.SeasonNumberBoxOff onClick={SeasonNumberClick} key={index} id={num}>
+        {num}
+      </S.SeasonNumberBoxOff>
     );
   });
 
