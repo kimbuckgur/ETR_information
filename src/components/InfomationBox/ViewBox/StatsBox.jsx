@@ -1,54 +1,21 @@
 import React, { useState } from "react";
+import { SeasonState } from "../../State/state";
+import { useRecoilState } from "recoil";
 import * as S from "./styled";
 
 const StatsBox = () => {
-  const [seasonNumber, setSeasonNumber] = useState([
-    {
-      season: 1,
-      active: false,
-    },
-    {
-      season: 2,
-      active: false,
-    },
-    {
-      season: 3,
-      active: false,
-    },
-    {
-      season: 4,
-      active: false,
-    },
-    {
-      season: 5,
-      active: false,
-    },
-    {
-      season: 6,
-      active: false,
-    },
-  ]);
+  const [seasonState, setSeasonState] = useRecoilState(SeasonState);
+  const [seasonNumber, setSeasonNumber] = useState([0, 1, 2, 3, 4, 5]);
 
-  const SeasonNumberClick = (e) => {
-    const { id } = e.target;
-    setSeasonNumber(
-      seasonNumber.map((x, index) => {
-        return id == x.season ? { ...seasonNumber, active: !x.active } : x;
-      })
-    );
+  const SeasonNumberOnChange = (e) => {
+    setSeasonState(e.target.value);
   };
 
-  const SeasonNumberMap = seasonNumber.map((x, index) => {
-    let num = x.season;
-    let bool = x.active;
-    return bool ? (
-      <S.SeasonNumberBoxOn onClick={SeasonNumberClick} key={index} id={num}>
-        {num}
-      </S.SeasonNumberBoxOn>
-    ) : (
-      <S.SeasonNumberBoxOff onClick={SeasonNumberClick} key={index} id={num}>
-        {num}
-      </S.SeasonNumberBoxOff>
+  const SeasonOptionMap = seasonNumber.map((x) => {
+    return (
+      <option key={x} value={x}>
+        {x == 0 ? 일반 : { x } `시즌` }
+      </option>
     );
   });
 
@@ -56,7 +23,10 @@ const StatsBox = () => {
     <S.StatsBox>
       <S.SeasonBox>
         <S.SeasonTitle>시즌</S.SeasonTitle>
-        {SeasonNumberMap}
+        <S.SeasonSelect onChange={SeasonNumberOnChange}>
+          <option selected>시즌</option>
+          {SeasonOptionMap}
+        </S.SeasonSelect>
       </S.SeasonBox>
     </S.StatsBox>
   );

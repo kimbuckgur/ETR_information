@@ -6,7 +6,7 @@ import SearchIcon from "../../assets/svg/SearchIcon.svg";
 import * as S from "./styled";
 
 const Searchbox = () => {
-  const [NickNameText, setNickNameText] = useState("");
+  const [nickNameText,setNickNameText] = useState("")
   const [ETRURL, setETRURL] = useRecoilState(baseURL);
   const [ETR_ApiKey, setETR_ApiKey] = useRecoilState(APIKey);
   const [userId, setUserId] = useRecoilState(UserID);
@@ -36,7 +36,7 @@ const Searchbox = () => {
         method: "GET",
         url: `${ETRURL}/v1/user/nickname`,
         params: {
-          query: `${NickNameText}`,
+          query: `${nickNameText}`,
         },
         headers: {
           "x-api-key": `${ETR_ApiKey}`,
@@ -44,19 +44,19 @@ const Searchbox = () => {
       })
         .catch((res) => {
           setETR_OnAndOff(false);
-          console.log("실패");
+          console.log("오류 실패");
           setNickNameText("");
           alert("닉네임을 정확하게 입력해주세요");
         })
         .then((res) => {
           if (res.data.code == 200) {
-            console.log(res);
             setETR_OnAndOff(true);
             setUserId(res.data.user.userNum);
             localStorage.setItem("UserId", `${res.data.user.userNum}`);
           } else if (res.data.code == 404) {
+            console.log(res)
             setETR_OnAndOff(false);
-            console.log("실패");
+            console.log("404 실패");
             setNickNameText("");
             alert("닉네임을 정확하게 입력해주세요");
           }
@@ -78,7 +78,7 @@ const Searchbox = () => {
           onChange={onChangeNickNameText}
           placeholder="닉네임을 입력해주세요"
           onKeyPress={ReceiveUserID}
-          value={NickNameText}
+          value={nickNameText}
         />
         <S.SearchInputImg src={SearchIcon} />
       </S.inputDiv>

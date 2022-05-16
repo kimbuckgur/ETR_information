@@ -10,7 +10,7 @@ export const RankBox = styled.div`
 
 export const StatsBox = styled.div`
   width: 1000px;
-  height: 160px;
+  height: 250px;
   background: #ffffff;
   border: 2px solid #e0e0e0;
   border-radius: 5px;
@@ -51,43 +51,25 @@ export const SeasonTitle = styled.p`
   font-size: 20px;
   line-height: 23px;
   color: #343434;
+
+  margin: 0px;
 `;
 
-export const SeasonNumberBoxOff = styled.div`
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+export const SeasonSelect = styled.select`
   font-family: "NanumSquare";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 18px;
-  line-height: 18px;
-  color: #343434;
+  line-height: 20px;
+  color: #e0e0e0;
 
-  background: #f0f0f0;
-  border-radius: 5px;
-  width: 30px;
-  height: 30px;
-  margin-left: 15px;
-`;
-
-export const SeasonNumberBoxOn = styled.div`
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-family: "NanumSquare";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  color: white;
-
-  background: #343434;
-  border-radius: 5px;
-  width: 30px;
-  height: 30px;
-  margin-left: 15px;
+  width: 150px;
+  height: 38px;
+  border: none;
+  outline: none;
+  border: 2px solid #e0e0e0;
+  border-radius: 3px;
+  margin-left: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
 `;

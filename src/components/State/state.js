@@ -19,3 +19,8 @@ export const UserID = atom({
   key: "userId",
   default: undefined,
 });
+
+export const SeasonState = atom({
+  key: "SeasonState",
+  default: 0,
+});
