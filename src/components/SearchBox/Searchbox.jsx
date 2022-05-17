@@ -1,21 +1,20 @@
 import axios from "axios";
 import React, { useState, useRef } from "react";
 import { useRecoilState } from "recoil";
-import { baseURL, APIKey, OnAndOff, UserID } from "../State/state";
+import { ETR_Infomation, OnAndOff, UserState } from "../State/state";
 import SearchIcon from "../../assets/svg/SearchIcon.svg";
 import * as S from "./styled";
 
 const Searchbox = () => {
-  const [nickNameText,setNickNameText] = useState("")
-  const [ETRURL, setETRURL] = useRecoilState(baseURL);
-  const [ETR_ApiKey, setETR_ApiKey] = useRecoilState(APIKey);
-  const [userId, setUserId] = useRecoilState(UserID);
+  const [nickNameText, setNickNameText] = useState("");
+  const [userState, setUserState] = useRecoilState(UserState);
+  const [ETR_Info, setETR_Info] = useRecoilState(ETR_Infomation);
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
   const onChangeNickNameText = (e) => {
+    console.log(nickNameText);
     setNickNameText(e.target.value);
   };
-
 
   // const GetStats = () => {
   //   let UserId = localStorage.getItem("UserId");
@@ -34,12 +33,12 @@ const Searchbox = () => {
     if (e.key == "Enter") {
       axios({
         method: "GET",
-        url: `${ETRURL}/v1/user/nickname`,
+        url: `${ETR_Info.url}/v1/user/nickname`,
         params: {
           query: `${nickNameText}`,
         },
         headers: {
-          "x-api-key": `${ETR_ApiKey}`,
+          "x-api-key": `${ETR_Info.API_key}`,
         },
       })
         .catch((res) => {
@@ -50,11 +49,12 @@ const Searchbox = () => {
         })
         .then((res) => {
           if (res.data.code == 200) {
+            const { userId } = userState;
             setETR_OnAndOff(true);
-            setUserId(res.data.user.userNum);
+            setUserState({ ...userState, [userId]: res.data.user.userNum });
             localStorage.setItem("UserId", `${res.data.user.userNum}`);
           } else if (res.data.code == 404) {
-            console.log(res)
+            console.log(res);
             setETR_OnAndOff(false);
             console.log("404 실패");
             setNickNameText("");

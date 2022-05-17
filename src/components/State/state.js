@@ -23,12 +23,12 @@ export const OnAndOff = atom({
   default: false,
 });
 
-export const UserID = atom({
-  key: "userId",
-  default: undefined,
-});
 
-export const SeasonState = atom({
-  key: "SeasonState",
-  default: 0,
+export const UserState = atom({
+  key: "UserState",
+  default: {
+    userId: undefined,
+    SeasonState: 0,
+    TeamModeState: 1,
+  },
 });

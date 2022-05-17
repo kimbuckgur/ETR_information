@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 import RankBox from "./RankBox";
 import StatsBox from "./StatsBox";
 import MatchBox from "./MatchBox";
-import { UserID, ETR_Infomation, OnAndOff, SeasonState } from "../../State/state";
+import { ETR_Infomation, OnAndOff, UserState } from "../../State/state";
 import { useRecoilState } from "recoil";
 import axios from "axios";
 import * as S from "./styled";
 
 const InfomationViewBox = () => {
   const [ETR_Info, setETR_Info] = useRecoilState(ETR_Infomation);
-  const [userId, setUserId] = useRecoilState(UserID);
+  const [userState, setUserState] = useRecoilState(UserState);
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
   const GetStats = () => {
     axios({
       method: "GET",
-      url: `${ETR_Info.url}/v1/user/stats/${userId}/${0}`,
+      url: `${ETR_Info.url}/v1/user/stats/${userState.userId}/${0}`,
       headers: {
         "x-api-key": `${ETR_Info.API_key}`,
       },
@@ -35,7 +35,7 @@ const InfomationViewBox = () => {
 
   useEffect(() => {
     GetStats();
-  }, [userId]);
+  }, [userState.userId]);
 
   return (
     <S.InfomationViewBox>

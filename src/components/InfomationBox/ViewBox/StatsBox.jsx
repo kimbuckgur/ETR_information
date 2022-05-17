@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { SeasonState } from "../../State/state";
+import { UserState } from "../../State/state";
 import { useRecoilState } from "recoil";
 import * as S from "./styled";
 
 const StatsBox = ({ GetStats }) => {
-  const [seasonState, setSeasonState] = useRecoilState(SeasonState);
+  const [userState, setUserState] = useRecoilState(UserState);
   const [seasonNumber, setSeasonNumber] = useState([1, 2, 3, 4, 5]);
 
   const SeasonNumberOnChange = (e) => {
+    const { SeasonState } = userState;
     GetStats();
-    setSeasonState(e.target.value);
+    setUserState({ ...useState, [SeasonState]: e.target.value });
   };
 
   const SeasonOptionMap = seasonNumber.map((x) => {
