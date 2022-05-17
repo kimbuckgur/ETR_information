@@ -1,5 +1,13 @@
 import { atom, selector } from "recoil";
 
+export const ETR_Infomation = atom({
+  key: "ETR_Infomation",
+  default: {
+    url: "https://open-api.bser.io",
+    API_key: "ymj3AvldYuaQaSnf3oT3S5MrxNAU1NvH4SDndXvS",
+  },
+});
+
 export const baseURL = atom({
   key: "baseURL",
   default: "https://open-api.bser.io",

@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const GuideLine = styled.div`
+  width: ${(props) => props.w};
+  height: ${(props) => props.h};
+  background: #e0e0e0;
+  border-radius: 100px;
+`;
+
 export const RankBox = styled.div`
   width: 300px;
   height: 400px;
@@ -48,11 +55,23 @@ export const SeasonTitle = styled.p`
   font-family: "NanumSquare";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 23px;
   color: #343434;
 
   margin: 0px;
+`;
+
+export const TeamModeTitle = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 23px;
+  color: #343434;
+
+  margin: 0px;
+  margin-left:20px;
 `;
 
 export const SeasonSelect = styled.select`
@@ -70,6 +89,7 @@ export const SeasonSelect = styled.select`
   border: 2px solid #e0e0e0;
   border-radius: 3px;
   margin-left: 20px;
+  margin-right:20px;
   padding-right: 10px;
   padding-left: 10px;
 `;
