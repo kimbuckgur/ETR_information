@@ -80,13 +80,13 @@ export const SeasonSelect = styled.select`
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
-  color: #e0e0e0;
+  color: #B6B6B6;
 
   width: 150px;
   height: 38px;
   border: none;
   outline: none;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #B6B6B6;
   border-radius: 3px;
   margin-left: 20px;
   margin-right:20px;

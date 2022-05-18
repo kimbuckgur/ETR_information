@@ -15,7 +15,7 @@ const InfomationViewBox = () => {
   const GetStats = () => {
     axios({
       method: "GET",
-      url: `${ETR_Info.url}/v1/user/stats/${userState.userId}/${0}`,
+      url: `${ETR_Info.url}/v1/user/stats/${userState.userId}/${userState.SeasonState}`,
       headers: {
         "x-api-key": `${ETR_Info.API_key}`,
       },

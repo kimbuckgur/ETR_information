@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UserState } from "../../State/state";
 import { useRecoilState } from "recoil";
 import * as S from "./styled";
@@ -7,10 +7,18 @@ const StatsBox = ({ GetStats }) => {
   const [userState, setUserState] = useRecoilState(UserState);
   const [seasonNumber, setSeasonNumber] = useState([1, 2, 3, 4, 5]);
 
-  const SeasonNumberOnChange = (e) => {
-    const { SeasonState } = userState;
+  useEffect(() => {
     GetStats();
-    setUserState({ ...useState, [SeasonState]: e.target.value });
+  }, [userState.SeasonState]);
+
+  const TeamModeStateOnChange = (e) => {
+    console.log(e.target.value);
+    setUserState({ ...userState, TeamModeState: e.target.value });
+  };
+
+  const SeasonNumberOnChange = (e) => {
+    console.log(e.target.value);
+    setUserState({ ...userState, SeasonState: e.target.value });
   };
 
   const SeasonOptionMap = seasonNumber.map((x) => {
@@ -30,7 +38,9 @@ const StatsBox = ({ GetStats }) => {
           {SeasonOptionMap}
         </S.SeasonSelect>
         <S.GuideLine w="1px" h="20px" />
-        <S.TeamModeTitle>팀 모드</S.TeamModeTitle>
+        <S.TeamModeTitle onChange={TeamModeStateOnChange}>
+          팀 모드
+        </S.TeamModeTitle>
         <S.SeasonSelect>
           <option value={1}>솔로</option>
           <option value={2}>듀오</option>

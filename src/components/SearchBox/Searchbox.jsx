@@ -16,19 +16,6 @@ const Searchbox = () => {
     setNickNameText(e.target.value);
   };
 
-  // const GetStats = () => {
-  //   let UserId = localStorage.getItem("UserId");
-  //   axios({
-  //     method: "GET",
-  //     url: `${ETRURL}/v1/user/stats/${UserId}/${1}`,
-  //     headers: {
-  //       "x-api-key": `${ETR_ApiKey}`,
-  //     },
-  //   }).then((res) => {
-  //     console.log(res);
-  //   });
-  // };
-
   const ReceiveUserID = (e) => {
     if (e.key == "Enter") {
       axios({
@@ -49,9 +36,9 @@ const Searchbox = () => {
         })
         .then((res) => {
           if (res.data.code == 200) {
-            const { userId } = userState;
             setETR_OnAndOff(true);
-            setUserState({ ...userState, [userId]: res.data.user.userNum });
+            setUserState({ ...userState, userId: res.data.user.userNum });
+            setNickNameText("");
             localStorage.setItem("UserId", `${res.data.user.userNum}`);
           } else if (res.data.code == 404) {
             console.log(res);
