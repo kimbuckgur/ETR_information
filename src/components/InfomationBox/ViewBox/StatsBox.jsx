@@ -31,7 +31,7 @@ const StatsBox = ({ GetStats }) => {
 
   return (
     <S.StatsBox>
-      <S.SeasonBox>
+      <S.ModeBox>
         <S.SeasonTitle>시즌</S.SeasonTitle>
         <S.SeasonSelect onChange={SeasonNumberOnChange}>
           <option value={0}>일반</option>
@@ -46,7 +46,8 @@ const StatsBox = ({ GetStats }) => {
           <option value={2}>듀오</option>
           <option value={3}>스쿼드</option>
         </S.SeasonSelect>
-      </S.SeasonBox>
+        <S.SeasonTitle>{userState.userNickName}의 전적</S.SeasonTitle>
+      </S.ModeBox>
     </S.StatsBox>
   );
 };

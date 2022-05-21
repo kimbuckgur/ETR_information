@@ -43,7 +43,7 @@ export const InfomationViewBoxFlex = styled.div`
   display: flex;
 `;
 
-export const SeasonBox = styled.div`
+export const ModeBox = styled.div`
   display: flex;
   align-items: center;
 

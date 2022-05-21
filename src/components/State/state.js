@@ -23,10 +23,10 @@ export const OnAndOff = atom({
   default: false,
 });
 
-
 export const UserState = atom({
   key: "UserState",
   default: {
+    userNickName: "",
     userId: undefined,
     SeasonState: 0,
     TeamModeState: 1,
