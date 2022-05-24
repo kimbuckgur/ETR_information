@@ -32,3 +32,10 @@ export const UserState = atom({
     TeamModeState: 1,
   },
 });
+
+export const UserMatch = atom({
+  key:"UserMatch",
+  default:{
+    
+  }
+})

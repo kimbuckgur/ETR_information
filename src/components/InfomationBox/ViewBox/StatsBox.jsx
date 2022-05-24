@@ -46,8 +46,26 @@ const StatsBox = ({ GetStats }) => {
           <option value={2}>듀오</option>
           <option value={3}>스쿼드</option>
         </S.SeasonSelect>
-        <S.SeasonTitle>{userState.userNickName}의 전적</S.SeasonTitle>
+        {/* <S.SeasonTitle>{userState.userNickName}의 전적</S.SeasonTitle> */}
       </S.ModeBox>
+      <S.UserStatsAria>
+        <S.UserStatsTextBox>
+          <S.UserStatsText>플레이한 게임</S.UserStatsText>
+          <S.UserStatsReply>203</S.UserStatsReply>
+        </S.UserStatsTextBox>
+        <S.UserStatsTextBox>
+          <S.UserStatsText>플레이</S.UserStatsText>
+          <S.UserStatsReply>203</S.UserStatsReply>
+        </S.UserStatsTextBox>
+        <S.UserStatsTextBox>
+          <S.UserStatsText>플레이한 게임</S.UserStatsText>
+          <S.UserStatsReply>203</S.UserStatsReply>
+        </S.UserStatsTextBox>
+        <S.UserStatsTextBox>
+          <S.UserStatsText>플레이한 게임</S.UserStatsText>
+          <S.UserStatsReply>203</S.UserStatsReply>
+        </S.UserStatsTextBox>
+      </S.UserStatsAria>
     </S.StatsBox>
   );
 };

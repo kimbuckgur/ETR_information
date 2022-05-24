@@ -71,7 +71,7 @@ export const TeamModeTitle = styled.p`
   color: #343434;
 
   margin: 0px;
-  margin-left:20px;
+  margin-left: 20px;
 `;
 
 export const SeasonSelect = styled.select`
@@ -80,16 +80,55 @@ export const SeasonSelect = styled.select`
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
-  color: #B6B6B6;
+  color: #b6b6b6;
 
   width: 150px;
   height: 38px;
   border: none;
   outline: none;
-  border: 2px solid #B6B6B6;
+  border: 2px solid #b6b6b6;
   border-radius: 3px;
   margin-left: 20px;
-  margin-right:20px;
+  margin-right: 20px;
   padding-right: 10px;
   padding-left: 10px;
+`;
+
+export const UserStatsAria = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 15px;
+  margin-left: 25px;
+`;
+
+export const UserStatsText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #5a5a5a;
+
+  margin: 0px;
+`;
+
+export const UserStatsReply = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: #929292;
+
+  margin: 0px;
+`;
+
+export const UserStatsTextBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 250px;
+  height: 40px;
 `;
