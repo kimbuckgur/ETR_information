@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { UserState } from "../../State/state";
+import { UserState, UserMatch } from "../../State/state";
 import { useRecoilState } from "recoil";
 import * as S from "./styled";
 
 const StatsBox = ({ GetStats }) => {
   const [userState, setUserState] = useRecoilState(UserState);
+  const [userMatch, setUserMatch] = useRecoilState(UserMatch);
   const [seasonNumber, setSeasonNumber] = useState([1, 2, 3, 4, 5]);
 
   useEffect(() => {
@@ -12,7 +13,6 @@ const StatsBox = ({ GetStats }) => {
   }, [userState.SeasonState]);
 
   const TeamModeStateOnChange = (e) => {
-    console.log(e.target.value);
     setUserState({ ...userState, TeamModeState: e.target.value });
   };
 
@@ -46,24 +46,11 @@ const StatsBox = ({ GetStats }) => {
           <option value={2}>듀오</option>
           <option value={3}>스쿼드</option>
         </S.SeasonSelect>
-        {/* <S.SeasonTitle>{userState.userNickName}의 전적</S.SeasonTitle> */}
       </S.ModeBox>
       <S.UserStatsAria>
         <S.UserStatsTextBox>
           <S.UserStatsText>플레이한 게임</S.UserStatsText>
-          <S.UserStatsReply>203</S.UserStatsReply>
-        </S.UserStatsTextBox>
-        <S.UserStatsTextBox>
-          <S.UserStatsText>플레이</S.UserStatsText>
-          <S.UserStatsReply>203</S.UserStatsReply>
-        </S.UserStatsTextBox>
-        <S.UserStatsTextBox>
-          <S.UserStatsText>플레이한 게임</S.UserStatsText>
-          <S.UserStatsReply>203</S.UserStatsReply>
-        </S.UserStatsTextBox>
-        <S.UserStatsTextBox>
-          <S.UserStatsText>플레이한 게임</S.UserStatsText>
-          <S.UserStatsReply>203</S.UserStatsReply>
+          <S.UserStatsReply>{userMatch[0].mmr}</S.UserStatsReply>
         </S.UserStatsTextBox>
       </S.UserStatsAria>
     </S.StatsBox>

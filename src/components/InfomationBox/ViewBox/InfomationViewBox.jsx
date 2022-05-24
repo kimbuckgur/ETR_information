@@ -2,7 +2,12 @@ import React, { useEffect } from "react";
 import RankBox from "./RankBox";
 import StatsBox from "./StatsBox";
 import MatchBox from "./MatchBox";
-import { ETR_Infomation, OnAndOff, UserState } from "../../State/state";
+import {
+  ETR_Infomation,
+  OnAndOff,
+  UserState,
+  UserMatch,
+} from "../../State/state";
 import { useRecoilState } from "recoil";
 import axios from "axios";
 import * as S from "./styled";
@@ -10,6 +15,7 @@ import * as S from "./styled";
 const InfomationViewBox = () => {
   const [ETR_Info, setETR_Info] = useRecoilState(ETR_Infomation);
   const [userState, setUserState] = useRecoilState(UserState);
+  const [userMatch, setUserMatch] = useRecoilState(UserMatch);
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
   const GetStats = () => {
@@ -19,20 +25,19 @@ const InfomationViewBox = () => {
       headers: {
         "x-api-key": `${ETR_Info.API_key}`,
       },
+    }).then((res) => {
+      if (res.data.code == 200) {
+        setUserMatch(res.data.userStats)
+      } else if (res.data.code == 404) {
+        console.log("랭크전을 안했습니다");
+      }
     })
       .catch((res) => {
         setETR_OnAndOff(false);
         alert("오류가 발생했습니다");
       })
-      .then((res) => {
-        if (res.data.code == 200) {
-          console.log(res);
-        } else if (res.data.code == 404) {
-          console.log("랭크전을 안했습니다");
-        }
-      });
   };
-
+  console.log(userMatch)
   useEffect(() => {
     GetStats();
   }, [userState.userId]);

@@ -34,8 +34,6 @@ export const UserState = atom({
 });
 
 export const UserMatch = atom({
-  key:"UserMatch",
-  default:{
-    
-  }
-})
+  key: "UserMatch",
+  default: null,
+});
