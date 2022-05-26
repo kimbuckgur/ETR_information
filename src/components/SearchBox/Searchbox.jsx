@@ -12,7 +12,6 @@ const Searchbox = () => {
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
   const onChangeNickNameText = (e) => {
-    console.log(nickNameText);
     setNickNameText(e.target.value);
   };
 
@@ -28,12 +27,6 @@ const Searchbox = () => {
           "x-api-key": `${ETR_Info.API_key}`,
         },
       })
-        .catch((res) => {
-          setETR_OnAndOff(false);
-          console.log("오류 실패");
-          setNickNameText("");
-          alert("닉네임을 정확하게 입력해주세요");
-        })
         .then((res) => {
           if (res.data.code == 200) {
             setETR_OnAndOff(true);
@@ -47,6 +40,12 @@ const Searchbox = () => {
             setNickNameText("");
             alert("닉네임을 정확하게 입력해주세요");
           }
+        })
+        .catch((res) => {
+          setETR_OnAndOff(false);
+          console.log("오류 실패");
+          setNickNameText("");
+          alert("닉네임을 정확하게 입력해주세요");
         });
     }
   };

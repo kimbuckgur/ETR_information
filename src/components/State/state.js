@@ -33,7 +33,12 @@ export const UserState = atom({
   },
 });
 
-export const UserMatch = atom({
-  key: "UserMatch",
+export const UserStatistics = atom({
+  key: "UserStatistics",
+  default: [],
+});
+
+export const UserMatchs = atom({
+  key: "UserMatchs",
   default: null,
 });

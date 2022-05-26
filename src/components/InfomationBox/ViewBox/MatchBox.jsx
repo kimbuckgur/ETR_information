@@ -20,9 +20,7 @@ const MatchBox = () => {
       headers: {
         "x-api-key": `${ETR_Info.API_key}`,
       },
-    }).then((res) => {
-      console.log(res);
-    });
+    }).then((res) => {});
   };
   useEffect(() => {
     GetBatttleRecord();
