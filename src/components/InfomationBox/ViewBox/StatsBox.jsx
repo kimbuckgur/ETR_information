@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { UserState, UserStatistics } from "../../State/state";
 import { useRecoilState } from "recoil";
 import OneSession from "../StatsBox/OneSession";
+import TwoSession from "../StatsBox/TwoSession";
 import * as S from "./styled";
 
 const StatsBox = ({ GetStats }) => {
@@ -45,14 +46,15 @@ const StatsBox = ({ GetStats }) => {
           <option value={3}>스쿼드</option>
         </S.SeasonSelect>
         <S.SeasonTitle>
-          {userStatistics[userState.TeamModeState - 1] ? (
-            userStatistics[userState.TeamModeState - 1].nickname 
-          ) : (
-            <></>
-          )} 님의 게임 전적
+          {userStatistics[0] ? userStatistics[0].nickname : <></>} 님의 게임
+          전적
         </S.SeasonTitle>
       </S.ModeBox>
-      <OneSession />
+      <S.SessionBox>
+        <OneSession />
+        <S.GuideLine w="1px" h="90px" />
+        <TwoSession/>
+      </S.SessionBox>
     </S.StatsBox>
   );
 };

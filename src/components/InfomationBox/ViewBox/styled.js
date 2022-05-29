@@ -99,7 +99,8 @@ export const UserStatsAria = styled.div`
   flex-direction: column;
 
   margin-top: 15px;
-  margin-left: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
 `;
 
 export const UserStatsText = styled.p`
@@ -131,4 +132,9 @@ export const UserStatsTextBox = styled.div`
 
   width: 250px;
   height: 40px;
+`;
+
+export const SessionBox = styled.div`
+  display: flex;
+  align-items: center;
 `;

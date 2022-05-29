@@ -3,47 +3,47 @@ import { UserState, UserStatistics } from "../../State/state";
 import { useRecoilState } from "recoil";
 import * as S from "../ViewBox/styled";
 
-const OneSession = () => {
+const TwoSession = () => {
   const [userState, setUserState] = useRecoilState(UserState);
   const [userStatistics, setUserStatistics] = useRecoilState(UserStatistics);
 
   return (
     <S.UserStatsAria>
       <S.UserStatsTextBox>
-        <S.UserStatsText>플레이한 게임</S.UserStatsText>
+        <S.UserStatsText>평균 킬</S.UserStatsText>
         <S.UserStatsReply>
           {userStatistics[userState.TeamModeState - 1] ? (
-            userStatistics[userState.TeamModeState - 1].totalGames
+            userStatistics[userState.TeamModeState - 1].averageKills
           ) : (
             <>정보가 없습니다</>
           )}
         </S.UserStatsReply>
       </S.UserStatsTextBox>
       <S.UserStatsTextBox>
-        <S.UserStatsText>총 승리 횟수</S.UserStatsText>
+        <S.UserStatsText>평균 어시스트</S.UserStatsText>
         <S.UserStatsReply>
           {userStatistics[userState.TeamModeState - 1] ? (
-            userStatistics[userState.TeamModeState - 1].totalWins
+            userStatistics[userState.TeamModeState - 1].averageAssistants
           ) : (
             <>정보가 없습니다</>
           )}
         </S.UserStatsReply>
       </S.UserStatsTextBox>
       <S.UserStatsTextBox>
-        <S.UserStatsText>랭킹</S.UserStatsText>
+        <S.UserStatsText>평균 순위</S.UserStatsText>
         <S.UserStatsReply>
           {userStatistics[userState.TeamModeState - 1] ? (
-            userStatistics[userState.TeamModeState - 1].rank
+            userStatistics[userState.TeamModeState - 1].averageRank
           ) : (
             <>정보가 없습니다</>
           )}
         </S.UserStatsReply>
       </S.UserStatsTextBox>
       <S.UserStatsTextBox>
-        <S.UserStatsText>총 킬수</S.UserStatsText>
+        <S.UserStatsText>평균 사냥 횟수</S.UserStatsText>
         <S.UserStatsReply>
           {userStatistics[userState.TeamModeState - 1] ? (
-            userStatistics[userState.TeamModeState - 1].totalTeamKills
+            userStatistics[userState.TeamModeState - 1].averageHunts
           ) : (
             <>정보가 없습니다</>
           )}
@@ -53,4 +53,4 @@ const OneSession = () => {
   );
 };
 
-export default OneSession;
+export default TwoSession;
