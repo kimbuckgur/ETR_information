@@ -13,6 +13,7 @@ const Searchbox = () => {
 
   const onChangeNickNameText = (e) => {
     setNickNameText(e.target.value);
+    console.log(nickNameText);
   };
 
   const ReceiveUserID = (e) => {

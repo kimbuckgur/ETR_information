@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { UserState, UserStatistics } from "../../State/state";
 import { useRecoilState } from "recoil";
+import OneSession from "../StatsBox/OneSession";
 import * as S from "./styled";
 
 const StatsBox = ({ GetStats }) => {
@@ -43,16 +44,15 @@ const StatsBox = ({ GetStats }) => {
           <option value={2}>듀오</option>
           <option value={3}>스쿼드</option>
         </S.SeasonSelect>
+        <S.SeasonTitle>
+          {userStatistics[userState.TeamModeState - 1] ? (
+            userStatistics[userState.TeamModeState - 1].nickname 
+          ) : (
+            <></>
+          )} 님의 게임 전적
+        </S.SeasonTitle>
       </S.ModeBox>
-      <S.UserStatsAria>
-        <S.UserStatsTextBox>
-          <S.UserStatsText>플레이한 게임</S.UserStatsText>
-          <S.UserStatsReply>
-            {userStatistics[userState.TeamModeState - 1] &&
-              userStatistics[userState.TeamModeState - 1].totalGames}
-          </S.UserStatsReply>
-        </S.UserStatsTextBox>
-      </S.UserStatsAria>
+      <OneSession />
     </S.StatsBox>
   );
 };
