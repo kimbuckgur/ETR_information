@@ -7,7 +7,10 @@ export const GuideLine = styled.div`
   border-radius: 100px;
 `;
 
-export const RankBox = styled.div`
+export const CharacterBox = styled.div`
+  display:flex;
+  flex-direction:column;
+
   width: 300px;
   height: 400px;
   background: #ffffff;

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import RankBox from "./RankBox";
+import Character from "./Character";
 import StatsBox from "./StatsBox";
 import MatchBox from "./MatchBox";
 import {
@@ -7,12 +7,14 @@ import {
   OnAndOff,
   UserState,
   UserStatistics,
+  ChraterState,
 } from "../../State/state";
 import { useRecoilState } from "recoil";
 import axios from "axios";
 import * as S from "./styled";
 
 const InfomationViewBox = () => {
+  const [chraterState, setChraterState] = useRecoilState(ChraterState);
   const [ETR_Info, setETR_Info] = useRecoilState(ETR_Infomation);
   const [userState, setUserState] = useRecoilState(UserState);
   const [userStatistics, setUserStatistics] = useRecoilState(UserStatistics);
@@ -29,9 +31,12 @@ const InfomationViewBox = () => {
       .then((res) => {
         if (res.data.code == 200) {
           setUserStatistics(res.data.userStats);
+          setChraterState(
+            res.data.userStats[userState.TeamModeState - 1].characterStats
+          );
         } else if (res.data.code == 404) {
           console.log("랭크전을 안했습니다");
-          setUserStatistics([])
+          setUserStatistics([]);
         }
       })
       .catch((res) => {
@@ -48,7 +53,7 @@ const InfomationViewBox = () => {
     <S.InfomationViewBox>
       <StatsBox GetStats={GetStats} />
       <S.InfomationViewBoxFlex>
-        <RankBox />
+        <Character GetStats={GetStats} />
         <MatchBox />
       </S.InfomationViewBoxFlex>
     </S.InfomationViewBox>
