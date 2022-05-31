@@ -14,7 +14,18 @@ const Character = ({ GetStats }) => {
 
   return (
     <S.CharacterBox>
-      <div></div>
+      <S.ChraterBoxTitle>캐릭터 통계</S.ChraterBoxTitle>
+      <S.CharacterBoxLine />
+      <S.CharacterBoxTextFlex>
+        <S.CharacterBoxText style={{"margin-right":"60px"}}>캐릭터</S.CharacterBoxText>
+        <S.CharacterBoxTextAria>
+          <S.CharacterBoxText>최다 킬</S.CharacterBoxText>
+        </S.CharacterBoxTextAria>
+        <S.CharacterBoxTextAria>
+          <S.CharacterBoxText>플레이 횟수</S.CharacterBoxText>
+        </S.CharacterBoxTextAria>
+      </S.CharacterBoxTextFlex>
+      <S.GuideLine l="10px" w="280px" h="1px"/>
     </S.CharacterBox>
   );
 };

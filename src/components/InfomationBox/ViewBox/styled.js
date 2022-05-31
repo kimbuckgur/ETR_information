@@ -3,13 +3,15 @@ import styled from "styled-components";
 export const GuideLine = styled.div`
   width: ${(props) => props.w};
   height: ${(props) => props.h};
+  margin-left: ${(props) => props.l};
   background: #e0e0e0;
   border-radius: 100px;
 `;
 
 export const CharacterBox = styled.div`
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   width: 300px;
   height: 400px;
@@ -140,4 +142,55 @@ export const UserStatsTextBox = styled.div`
 export const SessionBox = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const ChraterBoxTitle = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #343434;
+
+  margin: 0px;
+  margin-left: 20px;
+  margin-top: 20px;
+`;
+
+export const CharacterBoxLine = styled.div`
+  width: 60px;
+  height: 2px;
+  background: #3b3b3b;
+  border-radius: 100px;
+  margin-top: 10px;
+  margin-left: 20px;
+`;
+
+export const CharacterBoxTextFlex = styled.div`
+  display: flex;
+  align-items: center;
+
+  margin-left: 20px;
+  margin-top:10px;
+  margin-bottom:5px;
+`;
+
+export const CharacterBoxText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #5a5a5a;
+
+  margin: 0px;
+`;
+
+export const CharacterBoxTextAria = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80px;
+  height: 24px;
 `;
