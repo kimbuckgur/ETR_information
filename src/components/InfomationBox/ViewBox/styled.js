@@ -171,8 +171,8 @@ export const CharacterBoxTextFlex = styled.div`
   align-items: center;
 
   margin-left: 20px;
-  margin-top:10px;
-  margin-bottom:5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 `;
 
 export const CharacterBoxText = styled.p`
@@ -193,4 +193,41 @@ export const CharacterBoxTextAria = styled.div`
 
   width: 80px;
   height: 24px;
+  margin-left: ${(props) => props.l};
+`;
+
+export const CharacterBoxCharacterAria = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0px;
+`;
+
+export const CharacterBoxCharacter = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 300px;
+  height: 42px;
+`;
+
+export const CharacterBoxImg = styled.img`
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+  border: solid 1px black;
+  margin-left: 20px;
+`;
+
+export const CharacterBoxValue = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: ${(props) => props.We};
+  font-size: 14px;
+  line-height: 16px;
+  color: #5a5a5a;
+
+  margin: 0px;
+  margin-left: ${(props) => props.l};
 `;

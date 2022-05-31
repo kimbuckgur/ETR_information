@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Character from "./Character";
+import CharacterBox from "./CharacterBox";
 import StatsBox from "./StatsBox";
 import MatchBox from "./MatchBox";
 import {
@@ -53,7 +53,7 @@ const InfomationViewBox = () => {
     <S.InfomationViewBox>
       <StatsBox GetStats={GetStats} />
       <S.InfomationViewBoxFlex>
-        <Character GetStats={GetStats} />
+        <CharacterBox GetStats={GetStats} />
         <MatchBox />
       </S.InfomationViewBoxFlex>
     </S.InfomationViewBox>
