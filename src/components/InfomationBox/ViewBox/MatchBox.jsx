@@ -29,9 +29,11 @@ const MatchBox = () => {
         console.log("UserMatchs에서 오류가 발생했습니다");
       });
   };
+
   useEffect(() => {
     GetBatttleRecord();
   }, []);
+
   return <S.MatchBox></S.MatchBox>;
 };
 

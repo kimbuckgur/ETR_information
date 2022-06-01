@@ -35,5 +35,5 @@ export const UserMatchs = atom({
 
 export const ChraterState = atom({
   key: "chraterState",
-  default: {},
+  default: [],
 });
