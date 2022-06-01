@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { UserState, UserStatistics, ChraterState } from "../../State/state";
+import { UserState, ChraterState } from "../../State/state";
 import Character from "../CharacterBox/Character";
 import * as S from "./styled";
 

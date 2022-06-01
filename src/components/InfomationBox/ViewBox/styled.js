@@ -216,7 +216,7 @@ export const CharacterBoxImg = styled.img`
   width: 26px;
   height: 26px;
   border-radius: 100px;
-  border: solid 1px black;
+  border: solid 1px #3b3b3b;
   margin-left: 20px;
 `;
 
