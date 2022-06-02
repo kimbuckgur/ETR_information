@@ -231,3 +231,38 @@ export const CharacterBoxValue = styled.p`
   margin: 0px;
   margin-left: ${(props) => props.l};
 `;
+
+export const RankIMGBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-left: 30px;
+`;
+
+export const RankIMGDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 70px;
+  height: 70px;
+  border: 2px solid #b6b6b6;
+  border-radius: 100px;
+`;
+
+export const RankIMG = styled.img`
+  width: auto;
+  height: 50px;
+`;
+
+export const RankName = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #5a5a5a;
+
+  margin: 0px;
+  margin-top: 15px;
+`;

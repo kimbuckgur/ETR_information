@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { UserState, UserStatistics, ChraterState } from "../../State/state";
-import { nArray } from "../../../assets/imgTest";
+import { nArray } from "../../../assets/nArray";
 import * as S from "../ViewBox/styled";
 
 const Character = () => {
