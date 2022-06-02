@@ -12,15 +12,15 @@ const Character = () => {
 
   const ChraterStateMap = chraterState.map((x, index) => {
     return (
-      <S.CharacterBoxCharacterAria>
+      <S.CharacterBoxCharacterAria key={index}>
         <S.CharacterBoxCharacter>
-          <S.CharacterBoxImg />
+          <S.CharacterBoxImg src={nArray[x.characterCode]}/>
           <S.CharacterBoxValue l="10px" We="800">
             실비아
           </S.CharacterBoxValue>
           <S.CharacterBoxTextAria l="21px">
             <S.CharacterBoxValue We="300" l="0px">
-              {x ? x.maxKillings : <></>}
+              {x ? x. totalGames: <></>}
             </S.CharacterBoxValue>
           </S.CharacterBoxTextAria>
           <S.CharacterBoxTextAria l="0px">

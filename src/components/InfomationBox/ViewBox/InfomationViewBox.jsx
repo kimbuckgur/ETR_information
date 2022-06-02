@@ -36,6 +36,7 @@ const InfomationViewBox = () => {
           );
         } else if (res.data.code == 404) {
           console.log("랭크전을 안했습니다");
+          setChraterState([])
           setUserStatistics([]);
         }
       })
