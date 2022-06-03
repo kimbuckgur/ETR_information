@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { UserState, UserStatistics, ChraterState } from "../../State/state";
-import { nArray } from "../../../assets/nArray";
+import { cArray,nArray } from "../../../assets/CArray";
 import * as S from "../ViewBox/styled";
 
 const Character = () => {
@@ -14,9 +14,9 @@ const Character = () => {
     return (
       <S.CharacterBoxCharacterAria key={index}>
         <S.CharacterBoxCharacter>
-          <S.CharacterBoxImg src={nArray[x.characterCode]}/>
+          <S.CharacterBoxImg src={cArray[x.characterCode]}/>
           <S.CharacterBoxValue l="10px" We="800">
-            실비아
+            {nArray[x.characterCode]}
           </S.CharacterBoxValue>
           <S.CharacterBoxTextAria l="21px">
             <S.CharacterBoxValue We="300" l="0px">

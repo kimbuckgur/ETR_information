@@ -21,7 +21,7 @@ import Shoichi from "../assets/img/쇼이치.png";
 import Emma from "../assets/img/엠마.png";
 import Lenox from "../assets/img/레녹스.png";
 import Rozzi from "../assets/img/로지.png";
-import Loke from "../assets/img/루크.png";
+import Luke from "../assets/img/루크.png";
 import Cathy from "../assets/img/캐시.png";
 import Adela from "../assets/img/아델라.png";
 import Bernice from "../assets/img/버니스.png";
@@ -54,7 +54,7 @@ import Priya from "../assets/img/프리야.png";
 import Adina from "../assets/img/아디나.png";
 import Markus from "../assets/img/마커스.png";
 
-export const nArray = [
+export const cArray = [
   Jakie,
   Hyunwoo,
   Aya,
@@ -76,7 +76,7 @@ export const nArray = [
   Emma,
   Lenox,
   Rozzi,
-  Loke,
+  Luke,
   Cathy,
   Adela,
   Bernice,
@@ -110,9 +110,58 @@ export const nArray = [
   Markus,
 ];
 
-// export const n01 = Jakie;
-// export const n02 = Aya;
-// export const n03 = Hyunwoo;
-// export const n04 = Magnus;
-// export const n05 = Fiora;
-// export const n06 = Nadin;
+export const nArray = [
+  "재키",
+  "현우",
+  "아야",
+  "매그너스",
+  "피오라",
+  "나딘",
+  "자히르",
+  "히트",
+  "아이솔",
+  "리다이린",
+  "유키",
+  "혜진",
+  "쇼우",
+  "시셀라",
+  "키아라",
+  "아드리아나",
+  "실비아",
+  "쇼이치",
+  "엠마",
+  "레녹스",
+  "로지",
+  "루크",
+  "캐시",
+  "아델라",
+  "버니스",
+  "바바라",
+  "알렉스",
+  "수아",
+  "레온",
+  "일레븐",
+  "리오",
+  "윌리엄",
+  "니키",
+  "나타폰",
+  "얀",
+  "이바",
+  "다니엘",
+  "제니",
+  "카밀로",
+  "클로에",
+  "요한",
+  "비앙카",
+  "셸린",
+  "에키온",
+  "마이",
+  "에이든",
+  "라우라",
+  "띠아",
+  "펠릭스",
+  "엘레나",
+  "프리야",
+  "아디나",
+  "마커스",
+]

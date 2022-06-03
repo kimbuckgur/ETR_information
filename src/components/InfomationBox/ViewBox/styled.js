@@ -266,3 +266,21 @@ export const RankName = styled.p`
   margin: 0px;
   margin-top: 15px;
 `;
+
+export const RankText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #5a5a5a;
+`;
+
+export const RankTextBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 200px;
+  height: 35px;
+`;
