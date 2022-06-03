@@ -186,6 +186,15 @@ export const CharacterBoxText = styled.p`
   margin: 0px;
 `;
 
+export const CharacterBoxNameAria = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 60px;
+  height: 24px;
+  margin-left: 10px;
+`;
+
 export const CharacterBoxTextAria = styled.div`
   display: flex;
   justify-content: center;
@@ -193,7 +202,6 @@ export const CharacterBoxTextAria = styled.div`
 
   width: 80px;
   height: 24px;
-  margin-left: ${(props) => props.l};
 `;
 
 export const CharacterBoxCharacterAria = styled.div`

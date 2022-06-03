@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { UserState, UserStatistics, ChraterState } from "../../State/state";
-import { cArray,nArray } from "../../../assets/CArray";
+import { cArray, nArray } from "../../../assets/CArray";
 import * as S from "../ViewBox/styled";
 
 const Character = () => {
@@ -14,16 +14,18 @@ const Character = () => {
     return (
       <S.CharacterBoxCharacterAria key={index}>
         <S.CharacterBoxCharacter>
-          <S.CharacterBoxImg src={cArray[x.characterCode]}/>
-          <S.CharacterBoxValue l="10px" We="800">
-            {nArray[x.characterCode]}
-          </S.CharacterBoxValue>
-          <S.CharacterBoxTextAria l="21px">
+          <S.CharacterBoxImg src={cArray[x.characterCode]} />
+          <S.CharacterBoxNameAria>
+            <S.CharacterBoxValue l="0px" We="800">
+              {nArray[x.characterCode]}
+            </S.CharacterBoxValue>
+          </S.CharacterBoxNameAria>
+          <S.CharacterBoxTextAria>
             <S.CharacterBoxValue We="300" l="0px">
-              {x ? x. totalGames: <></>}
+              {x ? x.totalGames : <></>}
             </S.CharacterBoxValue>
           </S.CharacterBoxTextAria>
-          <S.CharacterBoxTextAria l="0px">
+          <S.CharacterBoxTextAria>
             <S.CharacterBoxValue We="300" l="0px">
               {x ? x.maxKillings : <></>}
             </S.CharacterBoxValue>
