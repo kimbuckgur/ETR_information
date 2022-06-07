@@ -292,3 +292,4 @@ export const RankTextBox = styled.div`
   width: 200px;
   height: 35px;
 `;
+

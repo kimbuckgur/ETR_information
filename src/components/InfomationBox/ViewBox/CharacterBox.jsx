@@ -7,7 +7,7 @@ import * as S from "./styled";
 const CharacterBox = ({ GetStats }) => {
   const [userState, setUserState] = useRecoilState(UserState);
   const [chraterState, setChraterState] = useRecoilState(ChraterState);
-  
+
   const testStyled = {
     marginRight: "60px",
   };
