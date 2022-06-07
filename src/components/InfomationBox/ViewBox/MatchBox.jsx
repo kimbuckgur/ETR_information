@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { ETR_Infomation, UserState, UserMatchs } from "../../State/state";
 import axios from "axios";
 import { useRecoilState } from "recoil";
+import { ETR_Infomation, UserState, UserMatchs } from "../../State/state";
+import MatchGame from "../MatchBox/MatchGame";
 import * as S from "./styled";
 
 const MatchBox = () => {
@@ -34,7 +35,12 @@ const MatchBox = () => {
     GetBatttleRecord();
   }, []);
 
-  return <S.MatchBox></S.MatchBox>;
+  return (
+    <S.MatchBox>
+      <MatchGame />
+      
+    </S.MatchBox>
+  );
 };
 
 export default MatchBox;

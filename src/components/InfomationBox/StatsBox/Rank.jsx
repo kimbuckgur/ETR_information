@@ -1,7 +1,17 @@
 import React from "react";
 import { UserState, UserStatistics } from "../../State/state";
 import { useRecoilState } from "recoil";
-import { unRank } from "../../../assets/RankImg";
+import {
+  unRank,
+  iron,
+  bronze,
+  silver,
+  gold,
+  platinum,
+  diamond,
+  eter,
+  titan,
+} from "../../../assets/RankImg";
 import * as S from "../ViewBox/styled";
 
 const Rank = () => {

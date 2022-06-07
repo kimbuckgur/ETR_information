@@ -293,3 +293,63 @@ export const RankTextBox = styled.div`
   height: 35px;
 `;
 
+export const UserThreeStatsAria = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+`;
+
+export const UserThreeStatsText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #5a5a5a;
+
+  margin: 0px;
+`;
+
+export const UserThreeStatsReply = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #929292;
+
+  margin: 0px;
+`;
+
+export const UserThreeStatsTextBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 180px;
+  height: 36px;
+`;
+
+export const MatchGameBox = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 680px;
+  height: 100px;
+  background: #ffffff;
+`;
+
+export const MaGaLine = styled.div`
+  width: 3px;
+  height: 100px;
+  background-color: #343434;
+`;
+
+export const TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
