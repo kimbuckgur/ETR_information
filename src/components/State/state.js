@@ -17,7 +17,7 @@ export const UserState = atom({
   key: "UserState",
   default: {
     userNickName: "",
-    userId: undefined,
+    userId: 0,
     SeasonState: 0,
     TeamModeState: 1,
   },

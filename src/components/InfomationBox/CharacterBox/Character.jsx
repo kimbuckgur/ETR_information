@@ -8,8 +8,6 @@ const Character = () => {
   const [userState, setUserState] = useRecoilState(UserState);
   const [chraterState, setChraterState] = useRecoilState(ChraterState);
 
-  console.log(chraterState);
-
   const ChraterStateMap = chraterState.map((x, index) => {
     return (
       <S.CharacterBoxCharacterAria key={index}>

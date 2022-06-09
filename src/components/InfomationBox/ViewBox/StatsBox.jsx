@@ -6,10 +6,10 @@ import Rank from "../StatsBox/Rank";
 import * as S from "./styled";
 import ThreeSession from "../StatsBox/ThreeSession";
 
-const StatsBox = ({ GetStats }) => {
+const StatsBox = ({GetStats}) => {
   return (
     <S.StatsBox>
-      <ModeBox GetStats={GetStats} />
+      <ModeBox GetStats={GetStats}/>
       <S.SessionBox>
         <OneSession />
         <S.GuideLine w="1px" h="90px" />

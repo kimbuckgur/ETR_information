@@ -29,7 +29,7 @@ const ThreeSession = () => {
           {userStatistics[userState.TeamModeState - 1] ? (
             userStatistics[userState.TeamModeState - 1].top1
           ) : (
-            <>일반 게임 입니다</>
+            <>정보가 없습니다</>
           )}
         </S.UserThreeStatsReply>
       </S.UserThreeStatsTextBox>
@@ -39,7 +39,7 @@ const ThreeSession = () => {
           {userStatistics[userState.TeamModeState - 1] ? (
             userStatistics[userState.TeamModeState - 1].top3
           ) : (
-            <>일반 게임 입니다</>
+            <>정보가 없습니다</>
           )}
         </S.UserThreeStatsReply>
       </S.UserThreeStatsTextBox>

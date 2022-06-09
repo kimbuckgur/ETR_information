@@ -1,22 +1,55 @@
 import axios from "axios";
 import React, { useState, useRef } from "react";
 import { useRecoilState } from "recoil";
-import { ETR_Infomation, OnAndOff, UserState } from "../State/state";
+import {
+  ETR_Infomation,
+  OnAndOff,
+  UserState,
+  UserStatistics,
+  ChraterState,
+} from "../State/state";
 import SearchIcon from "../../assets/svg/SearchIcon.svg";
 import * as S from "./styled";
 
 const Searchbox = () => {
   const [nickNameText, setNickNameText] = useState("");
-  const [userState, setUserState] = useRecoilState(UserState);
+  const [chraterState, setChraterState] = useRecoilState(ChraterState);
   const [ETR_Info, setETR_Info] = useRecoilState(ETR_Infomation);
+  const [userState, setUserState] = useRecoilState(UserState);
+  const [userStatistics, setUserStatistics] = useRecoilState(UserStatistics);
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
   const onChangeNickNameText = (e) => {
     setNickNameText(e.target.value);
-    console.log(nickNameText);
   };
 
-  const ReceiveUserID = (e) => {
+  const GetStats = (UserNum) => {
+    axios({
+      method: "GET",
+      url: `${ETR_Info.url}/v1/user/stats/${UserNum}/${userState.SeasonState}`,
+      headers: {
+        "x-api-key": `${ETR_Info.API_key}`,
+      },
+    })
+      .then((res) => {
+        if (res.data.code == 200) {
+          setUserStatistics(res.data.userStats);
+          setChraterState(
+            res.data.userStats[userState.TeamModeState - 1].characterStats
+          );
+        } else if (res.data.code == 404) {
+          console.log("랭크전을 안했습니다");
+          setChraterState([]);
+          setUserStatistics([]);
+        }
+      })
+      .catch((res) => {
+        setETR_OnAndOff(false);
+        alert("오류가 발생했습니다");
+      });
+  };
+
+  const ReceiveUserID = async (e) => {
     if (e.key == "Enter") {
       axios({
         method: "GET",
@@ -34,6 +67,7 @@ const Searchbox = () => {
             setUserState({ ...userState, userId: res.data.user.userNum });
             setNickNameText("");
             localStorage.setItem("UserId", `${res.data.user.userNum}`);
+            GetStats(res.data.user.userNum);
           } else if (res.data.code == 404) {
             console.log(res);
             setETR_OnAndOff(false);

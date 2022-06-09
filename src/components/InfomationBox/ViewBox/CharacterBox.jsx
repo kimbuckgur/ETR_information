@@ -12,10 +12,6 @@ const CharacterBox = ({ GetStats }) => {
     marginRight: "60px",
   };
 
-  useEffect(() => {
-    GetStats();
-  }, [userState.SeasonState]);
-
   return (
     <S.CharacterBox>
       <S.ChraterBoxTitle>캐릭터 통계</S.ChraterBoxTitle>

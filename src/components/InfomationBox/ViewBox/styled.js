@@ -329,7 +329,7 @@ export const UserThreeStatsTextBox = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  width: 180px;
+  width: 190px;
   height: 36px;
 `;
 
@@ -348,8 +348,60 @@ export const MaGaLine = styled.div`
   background-color: #343434;
 `;
 
-export const TextBox = styled.div`
+
+export const MaGaTextBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  margin-left: 25px;
+`;
+
+export const MaGaTextBoxLine = styled.div`
+  width: 100px;
+  height: 1px;
+  background: #e0e0e0;
+  border-radius: 100px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+`;
+
+export const MaGaRankingTextBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const MaGaRankingText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 25px;
+  color: #343434;
+
+  margin: 0px;
+  margin-right: 5px;
+`;
+
+export const MaGaTellText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #5a5a5a;
+
+  margin: 0px;
+`;
+
+export const MaGaTimeText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #5a5a5a;
+
+  margin: 0px;
 `;
