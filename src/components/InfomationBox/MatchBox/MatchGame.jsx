@@ -13,6 +13,12 @@ const MatchGame = () => {
         <S.MaGaTextBoxLine />
         <S.MaGaTimeText>13일전</S.MaGaTimeText>
       </S.MaGaTextBox>
+      <S.MaGaIMGBox>
+        <S.MaGaLevelBox>
+          <S.MaGaLevel>12</S.MaGaLevel>
+        </S.MaGaLevelBox>
+        <S.MaGaIMG />
+      </S.MaGaIMGBox>
     </S.MatchGameBox>
   );
 };

@@ -46,10 +46,6 @@ const InfomationViewBox = () => {
       });
   };
 
-  useEffect(() => {
-    GetStats();
-  }, [userState.SeasonState]);
-
   return (
     <S.InfomationViewBox>
       <StatsBox GetStats={GetStats} />

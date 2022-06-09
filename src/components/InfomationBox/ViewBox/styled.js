@@ -348,7 +348,6 @@ export const MaGaLine = styled.div`
   background-color: #343434;
 `;
 
-
 export const MaGaTextBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -405,3 +404,53 @@ export const MaGaTimeText = styled.p`
 
   margin: 0px;
 `;
+
+export const MaGaIMGBox = styled.div`
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 70px;
+  height: 70px;
+  margin-left: 30px;
+`;
+
+export const MaGaLevelBox = styled.div`
+  position: absolute;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  width: 70px;
+  height: 70px;
+`;
+
+export const MaGaIMG = styled.img`
+  width: 54px;
+  height: 54px;
+  background: #ffffff;
+  border: 1px solid #343434;
+  border-radius: 100px;
+`;
+
+export const MaGaLevel = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #ffffff;
+
+  width: 24px;
+  height: 24px;
+  background: #343434;
+  border-radius: 100px;
+`;
+
