@@ -454,3 +454,89 @@ export const MaGaLevel = styled.div`
   border-radius: 100px;
 `;
 
+export const MaGaCharacteristicBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-left: 5px;
+`;
+
+export const MaGaCharacteristic = styled.div`
+  width: 24px;
+  height: 24px;
+  border: 1px solid #343434;
+  border-radius: 100px;
+
+  margin-top: 2px;
+  margin-bottom: 2px;
+`;
+
+export const MaGaGuideLine = styled.div`
+  width: 1px;
+  height: 50px;
+  background: #e0e0e0;
+  border-radius: 100px;
+  margin-left: 15px;
+  margin-right: 15px;
+`;
+
+export const MaGaTextAria = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const MaGaSubTitle = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #b6b6b6;
+
+  margin: 0px;
+  margin-bottom: 5px;
+`;
+
+export const MaGaText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #343434;
+
+  margin: 0px;
+`;
+
+export const MaGaSubLine = styled.div`
+  width: 1px;
+  height: 30px;
+  background: #e0e0e0;
+  border-radius: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+`;
+
+export const MaGaArrowAria = styled.div`
+  position: absolute;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 680px;
+  height: 100px;
+`;
+
+export const MaGaArrowBox = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  padding-bottom: 15px;
+  width: 30px;
+  height: 85px;
+  background: #5a5a5a;
+`;
