@@ -10,35 +10,9 @@ const MatchBox = () => {
   const [userState, setUserState] = useRecoilState(UserState);
   const [userMatchs, setUserMatch] = useRecoilState(UserMatchs);
 
-  const GetBatttleRecord = () => {
-    axios({
-      method: "GET",
-      url: `${ETR_Info.url}/v1/user/games/${userState.userId}`,
-      params: {
-        query: {
-          next: 0,
-        },
-      },
-      headers: {
-        "x-api-key": `${ETR_Info.API_key}`,
-      },
-    })
-      .then((res) => {
-        setUserMatch(res.userGames);
-      })
-      .catch(() => {
-        console.log("UserMatchs에서 오류가 발생했습니다");
-      });
-  };
-
-  useEffect(() => {
-    GetBatttleRecord();
-  }, []);
-
   return (
     <S.MatchBox>
       <MatchGame />
-      
     </S.MatchBox>
   );
 };

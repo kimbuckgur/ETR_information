@@ -7,12 +7,14 @@ import {
   UserState,
   UserStatistics,
   ChraterState,
+  UserMatchs,
 } from "../State/state";
 import SearchIcon from "../../assets/svg/SearchIcon.svg";
 import * as S from "./styled";
 
 const Searchbox = () => {
   const [nickNameText, setNickNameText] = useState("");
+  const [userMatchs, setUserMatch] = useRecoilState(UserMatchs);
   const [chraterState, setChraterState] = useRecoilState(ChraterState);
   const [ETR_Info, setETR_Info] = useRecoilState(ETR_Infomation);
   const [userState, setUserState] = useRecoilState(UserState);
@@ -21,6 +23,28 @@ const Searchbox = () => {
 
   const onChangeNickNameText = (e) => {
     setNickNameText(e.target.value);
+  };
+
+  const GetBatttleRecord = (UserNum) => {
+    axios({
+      method: "GET",
+      url: `${ETR_Info.url}/v1/user/games/${UserNum}`,
+      params: {
+        query: {
+          next: 0,
+        },
+      },
+      headers: {
+        "x-api-key": `${ETR_Info.API_key}`,
+      },
+    })
+      .then((res) => {
+        setUserMatch(res.data.userGames);
+        console.log(res);
+      })
+      .catch(() => {
+        console.log("UserMatchs에서 오류가 발생했습니다");
+      });
   };
 
   const GetStats = (UserNum) => {
@@ -66,7 +90,7 @@ const Searchbox = () => {
             setETR_OnAndOff(true);
             setUserState({ ...userState, userId: res.data.user.userNum });
             setNickNameText("");
-            localStorage.setItem("UserId", `${res.data.user.userNum}`);
+            GetBatttleRecord(res.data.user.userNum);
             GetStats(res.data.user.userNum);
           } else if (res.data.code == 404) {
             console.log(res);

@@ -531,12 +531,16 @@ export const MaGaArrowAria = styled.div`
 `;
 
 export const MaGaArrowBox = styled.button`
+  cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
 
   padding-bottom: 15px;
   width: 30px;
-  height: 85px;
+  height: 100px;
   background: #5a5a5a;
+  border: none;
+  outline: none;
 `;
