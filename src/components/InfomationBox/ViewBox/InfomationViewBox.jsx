@@ -21,7 +21,6 @@ const InfomationViewBox = () => {
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
   const GetStats = (season) => {
-    console.log(userState.SeasonState)
     axios({
       method: "GET",
       url: `${ETR_Info.url}/v1/user/stats/${userState.userId}/${season}`,

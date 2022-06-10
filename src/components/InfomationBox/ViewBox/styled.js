@@ -364,6 +364,24 @@ export const MaGaTextBox = styled.div`
   margin-left: 25px;
 `;
 
+export const MaGaTeamModeTextAria = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: ${(props)=>props.w};
+  margin-left: 15px;
+`;
+
+export const MaGaTeamModeText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #343434;
+`;
+
 export const MaGaTextBoxLine = styled.div`
   width: 100px;
   height: 1px;
@@ -422,7 +440,7 @@ export const MaGaIMGBox = styled.div`
 
   width: 70px;
   height: 70px;
-  margin-left: 30px;
+  margin-left: 15px;
 `;
 
 export const MaGaLevelBox = styled.div`
@@ -486,7 +504,6 @@ export const MaGaGuideLine = styled.div`
   background: #e0e0e0;
   border-radius: 100px;
   margin-left: 15px;
-  margin-right: 15px;
 `;
 
 export const MaGaTextAria = styled.div`
