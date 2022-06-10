@@ -31,7 +31,7 @@ export const StatsBox = styled.div`
 
 export const MatchBox = styled.div`
   width: 680px;
-  height: 920px;
+  height: 1030px;
   margin-left: 20px;
   background: #ffffff;
   border: 2px solid #e0e0e0;
@@ -46,6 +46,8 @@ export const InfomationViewBox = styled.div`
 
 export const InfomationViewBoxFlex = styled.div`
   display: flex;
+
+  margin-bottom: 200px;
 `;
 
 export const ModeBox = styled.div`
@@ -297,7 +299,6 @@ export const UserThreeStatsAria = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin-top: 15px;
   margin-left: 30px;
   margin-right: 30px;
 `;
@@ -331,6 +332,13 @@ export const UserThreeStatsTextBox = styled.div`
 
   width: 190px;
   height: 36px;
+`;
+
+export const MatchGameLine = styled.div`
+  width: 680px;
+  height: 3px;
+  background: #e0e0e0;
+  border-radius: 100px;
 `;
 
 export const MatchGameBox = styled.div`

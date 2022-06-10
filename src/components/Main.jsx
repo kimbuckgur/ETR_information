@@ -8,7 +8,7 @@ export const MainBox = styled.div`
   flex-direction: column;
   align-items: center;
 
-  height: auto;
+  height: 1900px;
   background-color: #f6f6f6;
 `;
 

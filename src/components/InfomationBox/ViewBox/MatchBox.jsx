@@ -6,15 +6,18 @@ import MatchGame from "../MatchBox/MatchGame";
 import * as S from "./styled";
 
 const MatchBox = () => {
-  const [ETR_Info, setETR_Info] = useRecoilState(ETR_Infomation);
-  const [userState, setUserState] = useRecoilState(UserState);
   const [userMatchs, setUserMatch] = useRecoilState(UserMatchs);
+  useEffect(() => {
+    console.log(userMatchs);
+  });
 
-  return (
-    <S.MatchBox>
-      <MatchGame />
-    </S.MatchBox>
-  );
+  const userMatchsMap = userMatchs.map((x, index) => {
+    if (index < 10) {
+      return <MatchGame x={x} key={index} />;
+    }
+  });
+
+  return <S.MatchBox>{userMatchs ? <>{userMatchsMap}</> : <></>}</S.MatchBox>;
 };
 
 export default MatchBox;
