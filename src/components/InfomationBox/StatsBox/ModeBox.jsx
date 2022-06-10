@@ -4,13 +4,15 @@ import { UserState, UserStatistics } from "../../State/state";
 import * as S from "../ViewBox/styled";
 
 const ModeBox = ({ GetStats }) => {
+  let data = 0;
   const [userState, setUserState] = useRecoilState(UserState);
   const [userStatistics, setUserStatistics] = useRecoilState(UserStatistics);
   const [seasonNumber, setSeasonNumber] = useState([1, 2, 3, 4, 5]);
 
   const SeasonOnChange = (e) => {
+    data = e.target.value;
     setUserState({ ...userState, SeasonState: e.target.value });
-    GetStats();
+    GetStats(data);
   };
 
   const TeamModeOnChange = (e) => {

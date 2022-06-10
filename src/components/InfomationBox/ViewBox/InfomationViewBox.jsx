@@ -20,10 +20,11 @@ const InfomationViewBox = () => {
   const [userStatistics, setUserStatistics] = useRecoilState(UserStatistics);
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
-  const GetStats = () => {
+  const GetStats = (season) => {
+    console.log(userState.SeasonState)
     axios({
       method: "GET",
-      url: `${ETR_Info.url}/v1/user/stats/${userState.userId}/${userState.SeasonState}`,
+      url: `${ETR_Info.url}/v1/user/stats/${userState.userId}/${season}`,
       headers: {
         "x-api-key": `${ETR_Info.API_key}`,
       },

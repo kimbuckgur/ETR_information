@@ -23,7 +23,12 @@ const TwoSession = () => {
         <S.UserStatsText>평균 어시스트</S.UserStatsText>
         <S.UserStatsReply>
           {userStatistics[userState.TeamModeState - 1] ? (
-            userStatistics[userState.TeamModeState - 1].averageAssistants
+            userStatistics[userState.TeamModeState - 1].averageAssistants ==
+            0 ? (
+              <>솔로입니다</>
+            ) : (
+              userStatistics[userState.TeamModeState - 1].averageAssistants
+            )
           ) : (
             <>정보가 없습니다</>
           )}
