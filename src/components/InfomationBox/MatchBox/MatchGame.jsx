@@ -39,7 +39,9 @@ const MatchGame = ({ x }) => {
           <S.MaGaLevelBox>
             <S.MaGaLevel>{x.characterLevel}</S.MaGaLevel>
           </S.MaGaLevelBox>
-          <S.MaGaIMG />
+          <S.MaGaIMGDiv>
+            <S.MaGaIMG src={cArray[x.characterNum]} />
+          </S.MaGaIMGDiv>
         </S.MaGaIMGBox>
         <S.MaGaCharacteristicBox>
           <S.MaGaCharacteristic />

@@ -369,7 +369,7 @@ export const MaGaTeamModeTextAria = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: ${(props)=>props.w};
+  width: ${(props) => props.w};
   margin-left: 15px;
 `;
 
@@ -454,12 +454,21 @@ export const MaGaLevelBox = styled.div`
   height: 70px;
 `;
 
-export const MaGaIMG = styled.img`
+export const MaGaIMGDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 54px;
   height: 54px;
   background: #ffffff;
-  border: 1px solid #343434;
+  border: 2px solid #5A5A5A;
   border-radius: 100px;
+  overflow: hidden;
+`;
+
+export const MaGaIMG = styled.img`
+  width: 54px;
 `;
 
 export const MaGaLevel = styled.div`
