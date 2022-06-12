@@ -39,8 +39,12 @@ const Searchbox = () => {
       },
     })
       .then((res) => {
-        setUserMatch(res.data.userGames);
-        console.log(res);
+        let UserGames = res.data.userGames;
+        UserGames.map((x, index) => {
+          x.id = index;
+          x.onAndoff = false;
+        });
+        setUserMatch(UserGames);
       })
       .catch(() => {
         console.log("UserMatchs에서 오류가 발생했습니다");
@@ -73,7 +77,23 @@ const Searchbox = () => {
       });
   };
 
-  const ReceiveUserID = async (e) => {
+  const Toolkit = () => {
+    axios({
+      method: "GET",
+      url: `${ETR_Info.url}/v1/Trait/Name/${7210601}`,
+      headers: {
+        "x-api-key": `${ETR_Info.API_key}`,
+      },
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((res) => {
+        console.log(res);
+      });
+  };
+
+  const ReceiveUserID = (e) => {
     if (e.key == "Enter") {
       axios({
         method: "GET",

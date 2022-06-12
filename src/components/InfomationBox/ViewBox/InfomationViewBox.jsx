@@ -46,6 +46,8 @@ const InfomationViewBox = () => {
       });
   };
 
+
+
   return (
     <S.InfomationViewBox>
       <StatsBox GetStats={GetStats} />

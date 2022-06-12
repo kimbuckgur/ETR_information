@@ -7,13 +7,18 @@ import * as S from "./styled";
 
 const MatchBox = () => {
   const [userMatchs, setUserMatch] = useRecoilState(UserMatchs);
-  useEffect(() => {
-    console.log(userMatchs);
-  });
+
+  const TestOnOff = (e) => {
+    setUserMatch(
+      userMatchs.map((x, index) =>
+        e.target.name == index ? { ...x, onAndoff: !x.onAndoff } : x
+      )
+    );
+  };
 
   const userMatchsMap = userMatchs.map((x, index) => {
     if (index < 10) {
-      return <MatchGame x={x} key={index} />;
+      return <MatchGame TestOnOff={TestOnOff} x={x} key={index} />;
     }
   });
 

@@ -350,6 +350,13 @@ export const MatchGameBox = styled.div`
   background: #ffffff;
 `;
 
+export const MatchGameDetails = styled.div`
+  width: 678px;
+  height: 200px;
+  border: 1px solid black;
+  margin-top: 1px;
+`;
+
 export const MaGaLine = styled.div`
   width: 3px;
   height: 100px;
@@ -462,7 +469,7 @@ export const MaGaIMGDiv = styled.div`
   width: 54px;
   height: 54px;
   background: #ffffff;
-  border: 2px solid #5A5A5A;
+  border: 2px solid #5a5a5a;
   border-radius: 100px;
   overflow: hidden;
 `;

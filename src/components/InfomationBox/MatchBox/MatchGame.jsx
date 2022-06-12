@@ -3,7 +3,7 @@ import { cArray } from "../../../assets/CArray";
 import arrow_low from "../../../assets/svg/arrow_low.svg";
 import * as S from "../ViewBox/styled";
 
-const MatchGame = ({ x }) => {
+const MatchGame = ({ x, TestOnOff }) => {
   let Team = "";
   if (x.matchingTeamMode == 1) {
     Team = "Solo";
@@ -13,12 +13,13 @@ const MatchGame = ({ x }) => {
     Team = "Squad";
   }
 
+
   return (
     <>
       <S.MatchGameBox>
         <S.MaGaArrowAria>
-          <S.MaGaArrowBox>
-            <img src={arrow_low} />
+          <S.MaGaArrowBox onClick={TestOnOff} name={x.id}>
+            <img src={arrow_low} name={x.id} />
           </S.MaGaArrowBox>
         </S.MaGaArrowAria>
         <S.MaGaLine />
@@ -64,6 +65,7 @@ const MatchGame = ({ x }) => {
           </S.MaGaTextAria>
         </S.MaGaTeamModeTextAria>
       </S.MatchGameBox>
+      {x.onAndoff ? <S.MatchGameDetails></S.MatchGameDetails> : <></>}
       <S.MatchGameLine />
     </>
   );
