@@ -3,6 +3,7 @@ import { cArray } from "../../../assets/CArray";
 import arrow_low from "../../../assets/svg/arrow_low.svg";
 import arrow_high from "../../../assets/svg/arrow_high.svg";
 import MaOneSession from "./MaOneSession";
+import MaTwoSession from "./MaTwoSession";
 import * as S from "../ViewBox/styled";
 
 const MatchGame = ({ x, TestOnOff }) => {
@@ -79,6 +80,7 @@ const MatchGame = ({ x, TestOnOff }) => {
           <S.MaGaDeTitle>스킬/통계</S.MaGaDeTitle>
           <S.MaGaDeSkillBox>{}</S.MaGaDeSkillBox>
           <MaOneSession x={x} />
+          <MaTwoSession x={x} />
         </S.MatchGameDetails>
       ) : (
         <></>
