@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { cArray } from "../../../assets/CArray";
 import arrow_low from "../../../assets/svg/arrow_low.svg";
 import arrow_high from "../../../assets/svg/arrow_high.svg";
+import MaOneSession from "./MaOneSession";
 import * as S from "../ViewBox/styled";
 
 const MatchGame = ({ x, TestOnOff }) => {
@@ -77,6 +78,7 @@ const MatchGame = ({ x, TestOnOff }) => {
           <S.MaGaDeTimeBox></S.MaGaDeTimeBox>
           <S.MaGaDeTitle>스킬/통계</S.MaGaDeTitle>
           <S.MaGaDeSkillBox>{}</S.MaGaDeSkillBox>
+          <MaOneSession x={x} />
         </S.MatchGameDetails>
       ) : (
         <></>

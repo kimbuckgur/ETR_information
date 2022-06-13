@@ -429,6 +429,51 @@ export const MaGaDeSkill = styled.div`
   border-radius: 4px;
 `;
 
+export const MaGaDeInfoBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 15px;
+  margin-left: 30px;
+`;
+
+export const MaGaDeTextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const MaGaDeText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #b6b6b6;
+
+  margin: 0px;
+  margin-bottom: 5px;
+`;
+
+export const MaGaDeSubText = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: ${(props) => props.color};
+
+  margin: 0px;
+`;
+
+export const MaGaDeLine = styled.div`
+  width: 1px;
+  height: 25px;
+  background: #e0e0e0;
+  border-radius: 100px;
+`;
+
 export const MaGaLine = styled.div`
   width: 3px;
   height: 100px;
