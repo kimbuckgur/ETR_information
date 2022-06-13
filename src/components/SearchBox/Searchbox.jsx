@@ -77,22 +77,6 @@ const Searchbox = () => {
       });
   };
 
-  const Toolkit = () => {
-    axios({
-      method: "GET",
-      url: `${ETR_Info.url}/v1/Trait/Name/${7210601}`,
-      headers: {
-        "x-api-key": `${ETR_Info.API_key}`,
-      },
-    })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((res) => {
-        console.log(res);
-      });
-  };
-
   const ReceiveUserID = (e) => {
     if (e.key == "Enter") {
       axios({

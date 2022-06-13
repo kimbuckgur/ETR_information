@@ -7,7 +7,7 @@ const ModeBox = ({ GetStats }) => {
   let data = 0;
   const [userState, setUserState] = useRecoilState(UserState);
   const [userStatistics, setUserStatistics] = useRecoilState(UserStatistics);
-  const [seasonNumber, setSeasonNumber] = useState([1, 2, 3, 4, 5]);
+  const [seasonNumber, setSeasonNumber] = useState([1, 2, 3, 4, 5, 6]);
 
   const SeasonOnChange = (e) => {
     data = e.target.value;

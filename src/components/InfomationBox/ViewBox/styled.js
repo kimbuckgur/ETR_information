@@ -351,10 +351,82 @@ export const MatchGameBox = styled.div`
 `;
 
 export const MatchGameDetails = styled.div`
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
   width: 678px;
-  height: 200px;
-  border: 1px solid black;
+  height: 242px;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
   margin-top: 1px;
+`;
+
+export const MaGaDeTimeBox = styled.div`
+  position: absolute;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 100%;
+`;
+
+export const MaGaDeTime = styled.p`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #5a5a5a;
+
+  margin-right: 20px;
+  margin-top: 20px;
+`;
+
+export const MaGaDeTitle = styled.div`
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #343434;
+
+  margin-left: 30px;
+  margin-top: 25px;
+`;
+
+export const MaGaDeSkillBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 7px;
+
+  margin-left: 30px;
+  margin-top: 15px;
+`;
+
+export const MaGaDeSkill = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 19px;
+  color: #ffffff;
+
+  width: 32px;
+  height: 32px;
+  background: #343434;
+  border-radius: 4px;
 `;
 
 export const MaGaLine = styled.div`

@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import { cArray } from "../../../assets/CArray";
 import arrow_low from "../../../assets/svg/arrow_low.svg";
+import arrow_high from "../../../assets/svg/arrow_high.svg";
 import * as S from "../ViewBox/styled";
 
 const MatchGame = ({ x, TestOnOff }) => {
   let Team = "";
+  let Date = "";
+
+  Date = x.startDtm.slice(0, 10);
+
   if (x.matchingTeamMode == 1) {
     Team = "Solo";
   } else if (x.matchingTeamMode == 2) {
@@ -13,13 +18,12 @@ const MatchGame = ({ x, TestOnOff }) => {
     Team = "Squad";
   }
 
-
   return (
     <>
       <S.MatchGameBox>
         <S.MaGaArrowAria>
           <S.MaGaArrowBox onClick={TestOnOff} name={x.id}>
-            <img src={arrow_low} name={x.id} />
+            <img src={x.onAndoff ? arrow_high : arrow_low} name={x.id} />
           </S.MaGaArrowBox>
         </S.MaGaArrowAria>
         <S.MaGaLine />
@@ -65,7 +69,18 @@ const MatchGame = ({ x, TestOnOff }) => {
           </S.MaGaTextAria>
         </S.MaGaTeamModeTextAria>
       </S.MatchGameBox>
-      {x.onAndoff ? <S.MatchGameDetails></S.MatchGameDetails> : <></>}
+      {x.onAndoff ? (
+        <S.MatchGameDetails>
+          <S.MaGaDeTimeBox>
+            <S.MaGaDeTime>{Date}</S.MaGaDeTime>
+          </S.MaGaDeTimeBox>
+          <S.MaGaDeTimeBox></S.MaGaDeTimeBox>
+          <S.MaGaDeTitle>스킬/통계</S.MaGaDeTitle>
+          <S.MaGaDeSkillBox>{}</S.MaGaDeSkillBox>
+        </S.MatchGameDetails>
+      ) : (
+        <></>
+      )}
       <S.MatchGameLine />
     </>
   );

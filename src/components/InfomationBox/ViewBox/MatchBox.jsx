@@ -8,6 +8,10 @@ import * as S from "./styled";
 const MatchBox = () => {
   const [userMatchs, setUserMatch] = useRecoilState(UserMatchs);
 
+  // useEffect(() => {
+  //   console.log(userMatchs);
+  // }, [userMatchs]);
+
   const TestOnOff = (e) => {
     setUserMatch(
       userMatchs.map((x, index) =>
