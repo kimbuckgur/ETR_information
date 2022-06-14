@@ -19,7 +19,7 @@ const CharacterBox = ({ GetStats }) => {
       <S.CharacterBoxTextFlex>
         <S.CharacterBoxText style={testStyled}>캐릭터</S.CharacterBoxText>
         <S.CharacterBoxTextAria>
-          <S.CharacterBoxText>최다 킬</S.CharacterBoxText>
+          <S.CharacterBoxText>킬 횟수</S.CharacterBoxText>
         </S.CharacterBoxTextAria>
         <S.CharacterBoxTextAria>
           <S.CharacterBoxText>플레이 횟수</S.CharacterBoxText>

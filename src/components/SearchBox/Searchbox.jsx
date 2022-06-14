@@ -26,17 +26,17 @@ const Searchbox = () => {
     setNickNameText(e.target.value);
   };
 
-  // const test = () => {
-  //   axios({
-  //     method: "GET",
-  //     url: `${ETR_Info.url}/v1/Trait/Name/7000201`,
-  //     headers: {
-  //       "x-api-key": `${ETR_Info.API_key}`,
-  //     },
-  //   }).then((res) => {
-  //     console.log(res);
-  //   });
-  // };
+  const test = () => {
+    axios({
+      method: "GET",
+      url: `${ETR_Info.url}/v1/data/hash`,
+      headers: {
+        "x-api-key": `${ETR_Info.API_key}`,
+      },
+    }).then((res) => {
+      console.log(res);
+    });
+  };
 
   const GetBatttleRecord = (UserNum) => {
     axios({
@@ -104,9 +104,10 @@ const Searchbox = () => {
       })
         .then((res) => {
           if (res.data.code == 200) {
+            test();
+            setNickNameText("");
             setETR_OnAndOff(true);
             setUserState({ ...userState, userId: res.data.user.userNum });
-            setNickNameText("");
             GetBatttleRecord(res.data.user.userNum);
             GetStats(res.data.user.userNum);
           } else if (res.data.code == 404) {

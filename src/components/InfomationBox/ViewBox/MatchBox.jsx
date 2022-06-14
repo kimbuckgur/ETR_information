@@ -26,7 +26,11 @@ const MatchBox = () => {
     }
   });
 
-  return <S.MatchBox>{userMatchs ? <>{userMatchsMap}</> : <></>}</S.MatchBox>;
+  return (
+    <S.MatchAria>
+      <S.MatchBox>{userMatchs ? <>{userMatchsMap}</> : <></>}</S.MatchBox>
+    </S.MatchAria>
+  );
 };
 
 export default MatchBox;

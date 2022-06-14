@@ -43,7 +43,12 @@ const OneSession = () => {
         <S.UserStatsText>총 킬수</S.UserStatsText>
         <S.UserStatsReply>
           {userStatistics[userState.TeamModeState - 1] ? (
-            userStatistics[userState.TeamModeState - 1].totalTeamKills
+            userStatistics[userState.TeamModeState - 1].totalTeamKills ==
+            undefined ? (
+              <>정보가 없습니다</>
+            ) : (
+              <>{userStatistics[userState.TeamModeState - 1].totalTeamKills}</>
+            )
           ) : (
             <>정보가 없습니다</>
           )}

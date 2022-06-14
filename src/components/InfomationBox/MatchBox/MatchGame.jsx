@@ -30,14 +30,14 @@ const MatchGame = ({ x, TestOnOff }) => {
         </S.MaGaArrowAria>
         <S.MaGaLine />
         <S.MaGaTextBox>
-          <S.MaGaRankingTextBox>
-            <S.MaGaRankingText>{x.gameRank}위</S.MaGaRankingText>
-            <S.MaGaTellText>
-              {x.matchingMode == 2 ? <>Nomal</> : <>Rank</>}
-            </S.MaGaTellText>
-          </S.MaGaRankingTextBox>
-          <S.MaGaTextBoxLine />
-          <S.MaGaTimeText>13일전</S.MaGaTimeText>
+          {x.gameRank == 1 ? (
+            <S.MaGaRankingText c="#0A4595;">{x.gameRank}위</S.MaGaRankingText>
+          ) : (
+            <S.MaGaRankingText c="#343434;">{x.gameRank}위</S.MaGaRankingText>
+          )}
+          <S.MaGaTellText>
+            {x.matchingMode == 2 ? <>Nomal</> : <>Rank</>}
+          </S.MaGaTellText>
         </S.MaGaTextBox>
         <S.MaGaTeamModeTextAria w="90px">
           <S.MaGaTeamModeText>{Team}</S.MaGaTeamModeText>
@@ -67,7 +67,9 @@ const MatchGame = ({ x, TestOnOff }) => {
         <S.MaGaTeamModeTextAria w="70px">
           <S.MaGaTextAria>
             <S.MaGaSubTitle>Route</S.MaGaSubTitle>
-            <S.MaGaText>{x.routeIdOfStart}</S.MaGaText>
+            <S.MaGaText>
+              {x.routeIdOfStart == 0 ? <>custom</> : x.routeIdOfStart}
+            </S.MaGaText>
           </S.MaGaTextAria>
         </S.MaGaTeamModeTextAria>
       </S.MatchGameBox>

@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const InfomationBox = styled.div`
   width: 1000px;
-  height: 1100px;
+  height: auto;
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 100px;
   border-radius: 8px;
 `;
 
@@ -28,4 +28,3 @@ export const NoneText = styled.p`
   line-height: 32px;
   color: #b6b6b6;
 `;
-

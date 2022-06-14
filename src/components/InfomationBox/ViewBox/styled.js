@@ -29,6 +29,12 @@ export const StatsBox = styled.div`
   margin-bottom: 20px;
 `;
 
+export const MatchAria = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const MatchBox = styled.div`
   width: 680px;
   height: auto;
@@ -36,6 +42,8 @@ export const MatchBox = styled.div`
   background: #ffffff;
   border: 2px solid #e0e0e0;
   border-radius: 5px;
+
+  margin-bottom: 30px;
 `;
 
 export const InfomationViewBox = styled.div`
@@ -46,8 +54,6 @@ export const InfomationViewBox = styled.div`
 
 export const InfomationViewBoxFlex = styled.div`
   display: flex;
-
-  margin-bottom: 200px;
 `;
 
 export const ModeBox = styled.div`
@@ -234,7 +240,7 @@ export const CharacterBoxValue = styled.p`
   font-family: "NanumSquare";
   font-style: normal;
   font-weight: ${(props) => props.We};
-  font-size: 14px;
+  font-size: 13px;
   line-height: 16px;
   color: #5a5a5a;
 
@@ -482,10 +488,10 @@ export const MaGaLine = styled.div`
 
 export const MaGaTextBox = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
 
-  margin-left: 25px;
+  width: 110px;
+  margin-left: 30px;
 `;
 
 export const MaGaTeamModeTextAria = styled.div`
@@ -494,7 +500,6 @@ export const MaGaTeamModeTextAria = styled.div`
   align-items: center;
 
   width: ${(props) => props.w};
-  margin-left: 15px;
 `;
 
 export const MaGaTeamModeText = styled.p`
@@ -519,15 +524,17 @@ export const MaGaRankingTextBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  margin-top: 1px;
 `;
 
 export const MaGaRankingText = styled.p`
   font-family: "NanumSquare";
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 23px;
   line-height: 25px;
-  color: #343434;
+  color: ${(props) => props.c};
 
   margin: 0px;
   margin-right: 5px;
