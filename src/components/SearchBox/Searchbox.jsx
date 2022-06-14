@@ -11,6 +11,7 @@ import {
 } from "../State/state";
 import SearchIcon from "../../assets/svg/SearchIcon.svg";
 import * as S from "./styled";
+import { useEffect } from "react";
 
 const Searchbox = () => {
   const [nickNameText, setNickNameText] = useState("");

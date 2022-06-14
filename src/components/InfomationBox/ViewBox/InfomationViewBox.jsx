@@ -20,6 +20,26 @@ const InfomationViewBox = () => {
   const [userStatistics, setUserStatistics] = useRecoilState(UserStatistics);
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
+  const GetRank = (mmr) => {
+    if (mmr < 400) {
+      return "iron";
+    } else if (mmr >= 400 && mmr < 800) {
+      return "bronze";
+    } else if (mmr >= 800 && mmr < 1200) {
+      return "silver";
+    } else if (mmr >= 1200 && mmr < 1600) {
+      return "gold";
+    } else if (mmr >= 1600 && mmr < 2000) {
+      return "platinum";
+    } else if (mmr >= 2000 && mmr < 2400) {
+      return "diamond";
+    } else if (mmr >= 2400 && mmr < 2600) {
+      return "titan";
+    } else if (mmr > 2600) {
+      return "eter";
+    }
+  };
+
   const GetStats = (season) => {
     axios({
       method: "GET",
@@ -34,10 +54,18 @@ const InfomationViewBox = () => {
           setChraterState(
             res.data.userStats[userState.TeamModeState - 1].characterStats
           );
+          setUserState({
+            ...userState,
+            Rank: GetRank(res.data.userStats[userState.TeamModeState - 1].mmr),
+          });
         } else if (res.data.code == 404) {
           console.log("랭크전을 안했습니다");
           setChraterState([]);
           setUserStatistics([]);
+          setUserState({
+            ...userState,
+            Rank: "",
+          });
         }
       })
       .catch((res) => {
@@ -45,8 +73,6 @@ const InfomationViewBox = () => {
         alert("오류가 발생했습니다");
       });
   };
-
-
 
   return (
     <S.InfomationViewBox>

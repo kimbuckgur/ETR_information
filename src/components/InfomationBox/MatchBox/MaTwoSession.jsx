@@ -47,11 +47,7 @@ const MaTwoSession = ({ x }) => {
       <S.MaGaDeLine />
       <S.MaGaDeTextBox>
         <S.MaGaDeText>플레이 시간</S.MaGaDeText>
-        <S.MaGaDeSubText color=" #34343">
-          {x.attackPower}
-            {/* .toString()
-            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")} */}
-        </S.MaGaDeSubText>
+        <S.MaGaDeSubText color=" #34343">{x.playTime}</S.MaGaDeSubText>
       </S.MaGaDeTextBox>
     </S.MaGaDeInfoBox>
   );

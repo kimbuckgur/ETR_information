@@ -20,6 +20,7 @@ export const UserState = atom({
     userId: 0,
     SeasonState: 0,
     TeamModeState: 1,
+    Rank: "",
   },
 });
 
