@@ -26,26 +26,12 @@ const Searchbox = () => {
     setNickNameText(e.target.value);
   };
 
-  const test = () => {
-    axios({
-      method: "GET",
-      url: `${ETR_Info.url}/v1/data/hash`,
-      headers: {
-        "x-api-key": `${ETR_Info.API_key}`,
-      },
-    }).then((res) => {
-      console.log(res);
-    });
-  };
-
   const GetBatttleRecord = (UserNum) => {
     axios({
       method: "GET",
       url: `${ETR_Info.url}/v1/user/games/${UserNum}`,
-      params: {
-        query: {
-          next: 0,
-        },
+      query: {
+        next: 0,
       },
       headers: {
         "x-api-key": `${ETR_Info.API_key}`,
@@ -104,7 +90,6 @@ const Searchbox = () => {
       })
         .then((res) => {
           if (res.data.code == 200) {
-            test();
             setNickNameText("");
             setETR_OnAndOff(true);
             setUserState({ ...userState, userId: res.data.user.userNum });

@@ -35,6 +35,34 @@ export const MatchAria = styled.div`
   align-items: center;
 `;
 
+export const MatachArrowBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+`;
+
+export const MatachArrow = styled.button`
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  padding: 0px;
+  padding-left: ${(props) => props.l};
+  padding-right: ${(props) => props.r};
+  border-radius: 100px;
+  border: 2px solid #343434;
+`;
+
 export const MatchBox = styled.div`
   width: 680px;
   height: auto;
@@ -42,8 +70,7 @@ export const MatchBox = styled.div`
   background: #ffffff;
   border: 2px solid #e0e0e0;
   border-radius: 5px;
-
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 `;
 
 export const InfomationViewBox = styled.div`
@@ -502,6 +529,14 @@ export const MaGaTeamModeTextAria = styled.div`
   width: ${(props) => props.w};
 `;
 
+export const MaGaSortTextAria = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: ${(props) => props.w};
+`;
+
 export const MaGaTeamModeText = styled.p`
   font-family: "NanumSquare";
   font-style: normal;
@@ -537,7 +572,7 @@ export const MaGaRankingText = styled.p`
   color: ${(props) => props.c};
 
   margin: 0px;
-  margin-right: 5px;
+  margin-right: 10px;
 `;
 
 export const MaGaTellText = styled.p`
@@ -644,6 +679,7 @@ export const MaGaGuideLine = styled.div`
   background: #e0e0e0;
   border-radius: 100px;
   margin-left: 15px;
+  margin-right: 15px;
 `;
 
 export const MaGaTextAria = styled.div`

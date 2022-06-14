@@ -21,6 +21,7 @@ export const UserState = atom({
     SeasonState: 0,
     TeamModeState: 1,
     Rank: "",
+    battlePageNum: 0,
   },
 });
 

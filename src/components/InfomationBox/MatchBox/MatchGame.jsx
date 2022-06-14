@@ -6,7 +6,7 @@ import MaOneSession from "./MaOneSession";
 import MaTwoSession from "./MaTwoSession";
 import * as S from "../ViewBox/styled";
 
-const MatchGame = ({ x, TestOnOff }) => {
+const MatchGame = ({ x, DetailOnOff }) => {
   let Team = "";
   let Date = "";
 
@@ -24,7 +24,7 @@ const MatchGame = ({ x, TestOnOff }) => {
     <>
       <S.MatchGameBox>
         <S.MaGaArrowAria>
-          <S.MaGaArrowBox onClick={TestOnOff} name={x.id}>
+          <S.MaGaArrowBox onClick={DetailOnOff} name={x.id}>
             <img src={x.onAndoff ? arrow_high : arrow_low} name={x.id} />
           </S.MaGaArrowBox>
         </S.MaGaArrowAria>
@@ -55,23 +55,23 @@ const MatchGame = ({ x, TestOnOff }) => {
           <S.MaGaCharacteristic />
         </S.MaGaCharacteristicBox>
         <S.MaGaGuideLine />
-        <S.MaGaTeamModeTextAria w="70px">
+        <S.MaGaSortTextAria w="80px">
           <S.MaGaTextAria>
-            <S.MaGaSubTitle>K/D/H</S.MaGaSubTitle>
+            <S.MaGaSubTitle>K/A/H</S.MaGaSubTitle>
             <S.MaGaText>
               {x.playerKill}/{x.playerAssistant}/{x.monsterKill}
             </S.MaGaText>
           </S.MaGaTextAria>
-        </S.MaGaTeamModeTextAria>
+        </S.MaGaSortTextAria>
         <S.MaGaSubLine />
-        <S.MaGaTeamModeTextAria w="70px">
+        <S.MaGaSortTextAria w="80px">
           <S.MaGaTextAria>
             <S.MaGaSubTitle>Route</S.MaGaSubTitle>
             <S.MaGaText>
               {x.routeIdOfStart == 0 ? <>custom</> : x.routeIdOfStart}
             </S.MaGaText>
           </S.MaGaTextAria>
-        </S.MaGaTeamModeTextAria>
+        </S.MaGaSortTextAria>
       </S.MatchGameBox>
       {x.onAndoff ? (
         <S.MatchGameDetails>
