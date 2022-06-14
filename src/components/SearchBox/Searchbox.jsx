@@ -26,6 +26,18 @@ const Searchbox = () => {
     setNickNameText(e.target.value);
   };
 
+  // const test = () => {
+  //   axios({
+  //     method: "GET",
+  //     url: `${ETR_Info.url}/v1/Trait/Name/7000201`,
+  //     headers: {
+  //       "x-api-key": `${ETR_Info.API_key}`,
+  //     },
+  //   }).then((res) => {
+  //     console.log(res);
+  //   });
+  // };
+
   const GetBatttleRecord = (UserNum) => {
     axios({
       method: "GET",

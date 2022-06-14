@@ -31,7 +31,7 @@ export const StatsBox = styled.div`
 
 export const MatchBox = styled.div`
   width: 680px;
-  height: 1030px;
+  height: auto;
   margin-left: 20px;
   background: #ffffff;
   border: 2px solid #e0e0e0;

@@ -22,41 +22,45 @@ const Rank = () => {
 
   useEffect(() => {
     switch (userState.Rank) {
+      case undefined:
+        setUseImg(unRank);
+        setRankName("언랭크");
+        break;
       case "":
         setUseImg(unRank);
-        setRankName("언랭크")
+        setRankName("언랭크");
         break;
       case "iron":
         setUseImg(iron);
-        setRankName("아이언")
+        setRankName("아이언");
         break;
       case "bronze":
         setUseImg(bronze);
-        setRankName("브론즈")
+        setRankName("브론즈");
         break;
       case "silver":
         setUseImg(silver);
-        setRankName("실버")
+        setRankName("실버");
         break;
       case "gold":
         setUseImg(gold);
-        setRankName("골드")
+        setRankName("골드");
         break;
       case "platinum":
         setUseImg(platinum);
-        setRankName("플래티넘")
+        setRankName("플래티넘");
         break;
       case "diamond":
         setUseImg(diamond);
-        setRankName("다이아")
+        setRankName("다이아");
         break;
       case "titan":
         setUseImg(titan);
-        setRankName("데미갓")
+        setRankName("데미갓");
         break;
       case "eter":
         setUseImg(eter);
-        setRankName("이터니티")
+        setRankName("이터니티");
         break;
     }
   }, [userState.Rank]);
