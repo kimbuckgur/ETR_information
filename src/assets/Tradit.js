@@ -1,5 +1,5 @@
 import Havoc from "./img/파괴/Havoc_파괴2.png";
-import Support from "./img/지원/Support_지원.png";
+import Support from "./img/지원/Support_지원2.png";
 import Fortifi_ from "./img/저항/Fortification_저항2.png";
 
 import weak from "./img/파괴/Frailty Infliction_취약.png";
