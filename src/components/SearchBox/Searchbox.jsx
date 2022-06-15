@@ -38,6 +38,7 @@ const Searchbox = () => {
       },
     })
       .then((res) => {
+        console.log(res.data)
         let UserGames = res.data.userGames;
         UserGames.map((x, index) => {
           x.id = index;

@@ -2,15 +2,14 @@ import React, { useEffect } from "react";
 import { cArray } from "../../../assets/CArray";
 import arrow_low from "../../../assets/svg/arrow_low.svg";
 import arrow_high from "../../../assets/svg/arrow_high.svg";
+import * as I from "../../../assets/Tradit";
 import MaOneSession from "./MaOneSession";
 import MaTwoSession from "./MaTwoSession";
 import * as S from "../ViewBox/styled";
 
 const MatchGame = ({ x, DetailOnOff }) => {
   let Team = "";
-  let Date = "";
-
-  Date = x.startDtm.slice(0, 10);
+  let Date = x.startDtm.slice(0, 10);
 
   if (x.matchingTeamMode == 1) {
     Team = "Solo";
@@ -51,8 +50,8 @@ const MatchGame = ({ x, DetailOnOff }) => {
           </S.MaGaIMGDiv>
         </S.MaGaIMGBox>
         <S.MaGaCharacteristicBox>
-          <S.MaGaCharacteristic />
-          <S.MaGaCharacteristic />
+          <S.MaGaCharacteristic src={I.N7000201} />
+          <S.MaGaCharacteristic src={I.N71} />
         </S.MaGaCharacteristicBox>
         <S.MaGaGuideLine />
         <S.MaGaSortTextAria w="80px">

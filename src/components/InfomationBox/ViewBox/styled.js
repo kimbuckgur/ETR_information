@@ -663,7 +663,11 @@ export const MaGaCharacteristicBox = styled.div`
   margin-left: 5px;
 `;
 
-export const MaGaCharacteristic = styled.div`
+export const MaGaCharacteristic = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 24px;
   height: 24px;
   border: 1px solid #343434;

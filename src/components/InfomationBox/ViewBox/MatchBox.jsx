@@ -41,24 +41,24 @@ const MatchBox = () => {
       });
   };
 
-  const onChangePage = (e) => {
-    const { name } = e.target;
-    if (name == "up") {
-      GetBatttleRecord(userState.battlePageNum + 1);
-      setUserState({
-        ...userState,
-        battlePageNum: userState.battlePageNum + 1,
-      });
-    } else if (name == "down") {
-      if (userState.battlePageNum > 0) {
-        GetBatttleRecord(userState.battlePageNum - 1);
-        setUserState({
-          ...userState,
-          battlePageNum: userState.battlePageNum - 1,
-        });
-      }
-    }
-  };
+  // const onChangePage = (e) => {
+  //   const { name } = e.target;
+  //   if (name == "up") {
+  //     GetBatttleRecord(userState.battlePageNum + 1);
+  //     setUserState({
+  //       ...userState,
+  //       battlePageNum: userState.battlePageNum + 1,
+  //     });
+  //   } else if (name == "down") {
+  //     if (userState.battlePageNum > 0) {
+  //       GetBatttleRecord(userState.battlePageNum - 1);
+  //       setUserState({
+  //         ...userState,
+  //         battlePageNum: userState.battlePageNum - 1,
+  //       });
+  //     }
+  //   }
+  // };
 
   const DetailOnOff = (e) => {
     setUserMatch(
@@ -76,13 +76,10 @@ const MatchBox = () => {
     <S.MatchAria>
       <S.MatchBox>{userMatchs ? <>{userMatchsMap}</> : <></>}</S.MatchBox>
       <S.MatachArrowBox>
-        <S.MatachArrow onClick={onChangePage} name="down" r="1px">
+        <S.MatachArrow name="down" r="1px">
           <img src={arrow_left} name="down" />
         </S.MatachArrow>
-        <S.MatachArrow onClick={onChangePage}>
-          {userState.battlePageNum + 1}
-        </S.MatachArrow>
-        <S.MatachArrow onClick={onChangePage} name="up" l="1px">
+        <S.MatachArrow name="up" l="1px">
           <img src={arrow_right} name="up" />
         </S.MatachArrow>
       </S.MatachArrowBox>
