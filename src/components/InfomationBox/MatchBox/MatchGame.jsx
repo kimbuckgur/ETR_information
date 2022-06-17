@@ -82,7 +82,6 @@ const MatchGame = ({ x, DetailOnOff }) => {
           </S.MaGaDeTimeBox>
           <S.MaGaDeTimeBox></S.MaGaDeTimeBox>
           <S.MaGaDeTitle>스킬/통계</S.MaGaDeTitle>
-          <S.MaGaDeSkillBox>{}</S.MaGaDeSkillBox>
           <MaOneSession x={x} />
           <MaTwoSession x={x} />
         </S.MatchGameDetails>

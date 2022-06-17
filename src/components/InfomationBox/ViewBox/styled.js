@@ -391,7 +391,7 @@ export const MatchGameDetails = styled.div`
   align-items: flex-start;
 
   width: 678px;
-  height: 242px;
+  height: 220px;
   background: #ffffff;
   border: 2px solid #e0e0e0;
   border-radius: 5px;
@@ -431,6 +431,7 @@ export const MaGaDeTitle = styled.div`
 
   margin-left: 30px;
   margin-top: 25px;
+  margin-bottom: 20px;
 `;
 
 export const MaGaDeSkillBox = styled.div`

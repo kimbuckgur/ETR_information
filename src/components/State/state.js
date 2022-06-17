@@ -4,7 +4,7 @@ export const ETR_Infomation = atom({
   key: "ETR_Infomation",
   default: {
     url: "https://open-api.bser.io",
-    API_key: "ymj3AvldYuaQaSnf3oT3S5MrxNAU1NvH4SDndXvS",
+    API_key: process.env.REACT_APP_API_KEY,
   },
 });
 

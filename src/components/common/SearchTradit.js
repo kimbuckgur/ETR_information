@@ -26,8 +26,8 @@ export const useFirstTradit = (x) => {
 
 export const useSecondTradit = (x) => {
   let SliceTradit = x.traitSecondSub[0];
-  SliceTradit = SliceTradit.toString();
-  SliceTradit = SliceTradit.slice(0, 2);
+  SliceTradit = String(SliceTradit).substring(0, 2);
+
   if (SliceTradit == 70) {
     return I.N70;
   } else if (SliceTradit == 71) {
