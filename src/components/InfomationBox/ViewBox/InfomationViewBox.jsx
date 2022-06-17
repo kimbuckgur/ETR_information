@@ -20,7 +20,6 @@ const InfomationViewBox = () => {
   const [userStatistics, setUserStatistics] = useRecoilState(UserStatistics);
   const [ETR_OnAndOff, setETR_OnAndOff] = useRecoilState(OnAndOff);
 
-
   const GetRank = (mmr) => {
     if (mmr < 400) {
       return "iron";
