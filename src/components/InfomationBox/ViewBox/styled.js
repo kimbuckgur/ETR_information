@@ -57,10 +57,11 @@ export const MatachArrow = styled.button`
   height: 36px;
   background-color: #ffffff;
   padding: 0px;
-  padding-left: ${(props) => props.l};
-  padding-right: ${(props) => props.r};
+  padding-left: 1px;
+  padding-top: 1px;
   border-radius: 100px;
   border: 2px solid #343434;
+  margin-left: 20px;
 `;
 
 export const MatchBox = styled.div`

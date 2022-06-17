@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { ETR_Infomation, UserState, UserMatchs } from "../../State/state";
-import arrow_left from "../../../assets/svg/arrow_left.svg";
-import arrow_right from "../../../assets/svg/arrow_right.svg";
+import arrow_arrowBlack from "../../../assets/svg/arrow_arrowBlack.svg";
 import MatchGame from "../MatchBox/MatchGame";
 import { useRecoilState } from "recoil";
 import axios from "axios";
@@ -12,16 +11,12 @@ const MatchBox = () => {
   const [ETR_Info, setETR_Info] = useRecoilState(ETR_Infomation);
   const [userMatchs, setUserMatch] = useRecoilState(UserMatchs);
 
-  useEffect(() => {
-    console.log(userState.battlePageNum);
-  }, [userState.battlePageNum]);
-
-  const GetBatttleRecord = (ClickPage) => {
+  const GetBatttleRecord = () => {
     axios({
       method: "GET",
       url: `${ETR_Info.url}/v1/user/games/${userState.userId}`,
       query: {
-        next: ClickPage,
+        next: userState.battlePageNum,
       },
       headers: {
         "x-api-key": `${ETR_Info.API_key}`,
@@ -75,14 +70,9 @@ const MatchBox = () => {
   return (
     <S.MatchAria>
       <S.MatchBox>{userMatchs ? <>{userMatchsMap}</> : <></>}</S.MatchBox>
-      <S.MatachArrowBox>
-        <S.MatachArrow name="down" r="1px">
-          <img src={arrow_left} name="down" />
-        </S.MatachArrow>
-        <S.MatachArrow name="up" l="1px">
-          <img src={arrow_right} name="up" />
-        </S.MatachArrow>
-      </S.MatachArrowBox>
+      <S.MatachArrow name="more">
+        <img src={arrow_arrowBlack} name="up" />
+      </S.MatachArrow>
     </S.MatchAria>
   );
 };
